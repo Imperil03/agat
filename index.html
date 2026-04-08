@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Коммерческое предложение - Яндекс Директ и SEO для ГБИ АГАТ</title>
+<style>
+:root{--primary:#A64F2A;--accent:#D59B5B;--dark:#2B241F;--dark2:#564235;--light:#F7F2EC;--gray:#6B7280}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:var(--light);color:var(--dark);line-height:1.6;overflow-x:clip}img{max-width:100%;display:block}
+.hero{background:linear-gradient(135deg,var(--dark) 0%,var(--dark2) 100%);color:#fff;padding:4.4rem 2rem 2.6rem;text-align:center}.hero h1{font-size:2.55rem;font-weight:800;margin-bottom:.9rem;line-height:1.12;overflow-wrap:anywhere}.hero h1 .hero-line{display:block}.hero h1 .hero-line-main{font-size:.82em;color:#fff}.hero h1 .hero-line-brand{color:var(--accent)}.hero p{font-size:1.06rem;color:rgba(255,255,255,.68);max-width:780px;margin:0 auto 1.35rem;overflow-wrap:anywhere}.hero-stats{display:flex;justify-content:center;gap:2.2rem;flex-wrap:wrap;margin-bottom:0}.hero-stat-value{font-size:2.15rem;font-weight:800;color:var(--accent)}.hero-stat-label{font-size:.82rem;color:rgba(255,255,255,.55);margin-top:.25rem;max-width:12rem}
+section{padding:5rem 2rem}.container{margin:0 auto;width:100%}.bg-white{background:#fff}.section-header{text-align:center;margin-bottom:3rem}.section-header h2{font-size:2rem;font-weight:800;margin-bottom:.55rem;overflow-wrap:anywhere}.section-header p{color:var(--gray);font-size:1.02rem;max-width:760px;margin:0 auto;overflow-wrap:anywhere}
+.cards{display:grid;grid-template-columns:1fr;gap:1.5rem}.cards>*{min-width:0}.code-card,.thumb-card{background:#fff;border-radius:16px;padding:2rem;border:1px solid #E5E7EB;transition:transform .2s,box-shadow .2s;min-width:0}.code-card:hover,.thumb-card:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,.08)}.code-card h3,.thumb-card h3{font-size:1.1rem;margin-bottom:.55rem}.code-card p,.thumb-card p{color:var(--gray);font-size:.95rem}
+.table-wrap{overflow:auto;border-radius:0;box-shadow:none}.market-table{width:100%;border-collapse:collapse;background:#fff}.market-table th{text-align:left;padding:.8rem .95rem;background:var(--dark);color:#fff;font-weight:600;font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;line-height:1.25}.market-table td{padding:.72rem .95rem;border-bottom:1px solid #E5E7EB;font-size:.88rem;line-height:1.42;vertical-align:top}.market-table tbody tr:nth-child(even){background:#FCFCFB}.market-table tbody tr.total td{background:#F7F2EC;font-size:.9rem}.market-table tbody tr:last-child td{border-bottom:none}.audit-link{display:inline;color:var(--primary);font-weight:400;text-decoration:none;overflow-wrap:anywhere;word-break:break-word}.audit-link:hover{text-decoration:none}
+.alt-summary-main{display:flex;align-items:center;gap:.9rem;min-width:0;flex:1}.alt-index{min-width:32px;height:32px;border-radius:50%;background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:center;font-size:.84rem;font-weight:700}.alt-summary-text{font-size:.98rem}.flow-layout{margin-top:2rem;display:grid;gap:1rem}.flow-demo{background:#fff;border:1px solid #E5E7EB;border-radius:18px;overflow:hidden}.flow-demo summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:flex-start;gap:1rem;padding:1.05rem 1.25rem;font-weight:700}.flow-demo summary::-webkit-details-marker{display:none}.flow-demo summary::after{content:'›';font-size:1.3rem;color:#9CA3AF;transition:transform .2s ease;flex-shrink:0;margin-left:.15rem}.flow-demo[open] summary{border-bottom:1px solid #E5E7EB}.flow-demo[open] summary::after{transform:rotate(90deg)}.flow-demo-body{padding:1.25rem;display:grid;gap:1rem}.flow-section{background:#FCFCFC;border:1px solid #ECECEC;border-radius:14px;padding:1rem 1.1rem}.flow-section.accent{background:linear-gradient(135deg,#FFF7ED,#FFF1E6);border-color:#F3D4C7}.flow-section h4{font-size:.82rem;letter-spacing:.05em;text-transform:uppercase;color:var(--primary);margin-bottom:.6rem}.flow-section p{color:var(--gray);font-size:.95rem}.flow-section p:last-child{margin-bottom:0}.flow-section code{background:#F5F6F8;color:var(--dark);padding:.12rem .38rem;border-radius:6px;font-size:.9em}.flow-section a.audit-link{text-decoration:underline}.flow-section a.audit-link:hover{text-decoration:none}.flow-list{list-style:none;display:grid;gap:.55rem}.flow-list li{position:relative;padding-left:1.2rem;color:var(--gray);font-size:.94rem}.flow-list li::before{content:'';position:absolute;left:0;top:.62rem;width:7px;height:7px;border-radius:50%;background:var(--primary)}.flow-link-row{display:flex;justify-content:flex-start;margin-top:.55rem}.flow-link-row a.audit-link{padding:.56rem .9rem;border-radius:999px;border:1px solid #F3D4C7;background:#FFF6F1;color:var(--primary);font-size:.9rem;line-height:1.25;text-decoration:none!important;white-space:normal}.flow-link-row a.audit-link:hover{background:#FFEFE4;text-decoration:none!important}.flow-summary-tag{display:inline-block;padding:0;background:transparent;border:none;color:#8B929E;font-size:.82rem;font-weight:500;white-space:normal;max-width:12rem;text-align:right;margin-left:auto;line-height:1.2}
+.code-card pre{margin-top:1rem;background:var(--dark);color:#F9FAFB;border-radius:12px;padding:1rem;overflow:auto;max-width:100%;font-size:.82rem;line-height:1.6;font-family:Consolas,Monaco,monospace;-webkit-overflow-scrolling:touch}.thumb-card img{width:100%;border-radius:12px;margin-top:1rem;border:1px solid #E5E7EB;cursor:zoom-in}.thumb-card .open-image{display:inline-flex;align-items:center;justify-content:center;margin-top:1rem;background:var(--dark);color:#fff;border:none;border-radius:999px;padding:.8rem 1.25rem;font-weight:700;cursor:pointer}footer{background:var(--dark);color:rgba(255,255,255,.38);text-align:center;padding:2rem;font-size:.85rem}.modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;padding:1.5rem;background:rgba(17,17,17,.82);z-index:2000}.modal.open{display:flex}.modal-dialog{position:relative;max-width:min(96vw,1180px);width:100%;max-height:90vh;background:#fff;border-radius:16px;overflow:auto}.modal-dialog img{width:100%;display:block;max-height:90vh;object-fit:contain}.modal-close{position:absolute;top:12px;right:12px;border:none;width:44px;height:44px;border-radius:50%;background:rgba(0,0,0,.72);color:#fff;font-size:1.4rem;cursor:pointer}
+.fade-in{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+@media (max-width:768px){.hero{padding:3.8rem 1rem 2.3rem}.hero h1{font-size:clamp(1.7rem,8vw,2rem);line-height:1.12;text-wrap:balance}.hero p{font-size:1rem;text-wrap:balance}.hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:1rem;max-width:420px;margin:0 auto}.hero-stat:last-child{grid-column:1/-1;justify-self:center}.hero-stat-value{font-size:1.6rem}.hero-stat-label{font-size:.75rem;max-width:9rem;margin-inline:auto}section{padding:3rem 1rem}.section-header{margin-bottom:2.1rem}.section-header h2{font-size:1.5rem;text-wrap:balance}.section-header p{font-size:.92rem}.cards{grid-template-columns:1fr}.flow-demo summary{padding:.95rem 1rem;gap:.75rem;align-items:flex-start}.alt-summary-text{font-size:.92rem;line-height:1.35}.flow-summary-tag{font-size:.76rem;max-width:9rem;text-align:right;white-space:normal}.flow-demo-body{padding:1rem}.flow-section{padding:.9rem 1rem}.table-card-head{padding:.95rem 1rem .75rem}.market-table th,.market-table td{padding:.62rem .72rem;font-size:.8rem}.code-card,.thumb-card{padding:1.2rem}.code-card pre{padding:.9rem;font-size:.78rem}.thumb-card .open-image{width:100%}.modal{padding:.85rem}}
+@media (max-width:480px){.hero h1{font-size:1.58rem}.hero p{font-size:.95rem}.flow-summary-tag{max-width:7.75rem}.table-wrap{border-radius:14px}}
+@media (max-width:360px){.hero-stats{grid-template-columns:1fr;max-width:220px}.hero-stat:last-child{grid-column:auto;justify-self:stretch}.flow-demo summary{padding:.9rem .9rem}.alt-summary-text{font-size:.88rem}.flow-summary-tag{font-size:.72rem;max-width:6.8rem}}
+@page{size:A4;margin:12mm 10mm}
+@media print{
+html,body{background:#fff}
+body{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+section{padding:0 0 9mm}
+.hero{padding:12mm 10mm 9mm}
+.hero p,.section-header p,.code-card p,.thumb-card p,.analysis-lead p,.analysis-card p,.flow-section p,.market-table td,.market-table th,.flow-list li,.analysis-list li,.analysis-steps li{font-size:10.5pt}
+.section-header{margin-bottom:6mm}
+.flow-layout,.analysis-grid,.cards,.files-grid{gap:4mm}
+.analysis-grid,.cards{grid-template-columns:1fr}
+.flow-demo{border-radius:14px}
+.flow-demo summary{padding:4mm 4.5mm;break-after:avoid-page;page-break-after:avoid}
+.flow-demo summary::after{display:none}
+.flow-summary-tag{max-width:none}
+.flow-demo-body{padding:4mm}
+.flow-section,.analysis-lead,.analysis-card,.code-card,.thumb-card{break-inside:avoid-page;page-break-inside:avoid;box-shadow:none}
+.table-card,.flow-demo,.analysis-lead,.analysis-card,.code-card,.thumb-card{box-shadow:none}
+.table-card-head{padding:4.5mm 5mm 3.5mm}
+.table-card-head,.market-table thead,.market-table tr{break-inside:avoid-page;page-break-inside:avoid}
+.table-wrap{overflow:visible;box-shadow:none}
+.market-table th,.market-table td{padding:3.2mm 3.4mm}
+.code-card pre{overflow:visible;white-space:pre-wrap;word-break:break-word;font-size:8.7pt}
+.flow-link-row,.open-image,.modal{display:none!important}
+.thumb-card img,.code-card pre{break-inside:avoid-page;page-break-inside:avoid}
+a.audit-link{color:inherit;text-decoration:none}
+footer{padding-top:4mm}
+}
+
+.container{max-width:1240px}
+.table-card{background:#fff;border:1px solid #E5E7EB;border-radius:16px;overflow:hidden;margin-top:1.1rem;box-shadow:0 1px 3px rgba(0,0,0,.03)}
+.table-card-head{padding:.95rem 1.15rem .75rem;background:#FCFBF9;border-bottom:1px solid #EFE7DF}
+.table-card-head h3{font-size:1rem;margin-bottom:0}
+.table-toggle-wrap{display:none}
+.table-toggle{display:inline-flex;align-items:center;justify-content:center;padding:.72rem 1.1rem;border:1px solid #E9D7C9;border-radius:999px;background:#FFF7F1;color:var(--primary);font-size:.88rem;font-weight:700;cursor:pointer;transition:background .2s ease,border-color .2s ease}
+.table-toggle:hover{background:#FFF1E6;border-color:#DFC2AF}
+.files-grid{display:grid;grid-template-columns:1fr;gap:1.5rem}.files-grid>*{min-width:0}.files-grid .code-card{height:100%;min-width:0}
+@media (max-width:768px){#meta .market-table thead,#schema .market-table thead{display:none}#meta .market-table,#meta .market-table tbody,#meta .market-table tr,#meta .market-table td,#schema .market-table,#schema .market-table tbody,#schema .market-table tr,#schema .market-table td{display:block;width:100%}#meta .market-table tr,#schema .market-table tr{padding:.8rem .9rem .2rem;border-bottom:1px solid #E5E7EB}#meta .market-table td,#schema .market-table td{border:none;padding:.3rem 0 .55rem;font-size:.84rem;line-height:1.35}#meta .market-table td::before,#schema .market-table td::before{content:attr(data-label);display:block;margin-bottom:.24rem;color:var(--gray);font-size:.66rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase}#meta .market-table td:last-child,#schema .market-table td:last-child{padding-bottom:.3rem}}
+@media (max-width:768px){.table-card.mobile-collapsible.has-toggle .table-toggle-wrap{display:flex;justify-content:center;padding:.9rem 1rem 1rem;background:#fff;border-top:1px solid #EFE7DF}.table-card.mobile-collapsible.is-collapsed .table-wrap{position:relative}.table-card.mobile-collapsible.is-collapsed .table-wrap::after{content:'';position:absolute;left:0;right:0;bottom:0;height:34px;background:linear-gradient(180deg,rgba(255,255,255,0),#fff)}.table-card.mobile-collapsible .market-table tbody tr.is-hidden-mobile{display:none !important}}
+
+html{-webkit-text-size-adjust:100%}
+main{display:block}
+section[id],.table-card[id],.code-card[id]{scroll-margin-top:1.25rem}
+.alt-summary-text{overflow-wrap:anywhere}
+.flow-section p+.flow-list,.flow-section .flow-list+p,.flow-section p+p{margin-top:.75rem}
+.flow-demo summary:focus-visible,.audit-link:focus-visible,.open-image:focus-visible,.modal-close:focus-visible{outline:3px solid rgba(166,79,42,.28);outline-offset:3px}
+.modal{overscroll-behavior:contain}
+.analysis-lead,.analysis-card{background:#fff;border:1px solid #E5E7EB;border-radius:18px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.analysis-lead{padding:1.45rem 1.5rem;background:linear-gradient(135deg,#FFF7ED,#FFFDF9);border-color:#F3D4C7}
+.analysis-lead h3,.analysis-card h3{margin-bottom:.7rem;font-size:1.05rem}
+.analysis-lead p,.analysis-card p{color:var(--gray);font-size:.96rem}
+.analysis-card p+p{margin-top:.8rem}
+.analysis-lead > p + .analysis-list{margin-top:1rem}
+.analysis-lead strong{color:var(--dark)}
+.analysis-highlight{margin-top:1rem;padding:1rem 1.05rem;border-radius:14px;background:#fff;border:1px solid #E9D7C9;color:var(--dark);font-size:.95rem;line-height:1.5}
+.analysis-highlight strong{color:var(--primary)}
+.analysis-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.25rem;margin-top:1.25rem}
+.analysis-card{padding:1.35rem 1.4rem}
+.analysis-card-wide{grid-column:1/-1}
+.analysis-card-accent{background:#FCFCFC;border-color:#ECECEC}
+.analysis-steps{list-style:none;display:grid;gap:.8rem;counter-reset:analysis-steps}
+.analysis-steps li{position:relative;padding-left:2.35rem;color:var(--gray);font-size:.95rem}
+.analysis-steps li::before{counter-increment:analysis-steps;content:counter(analysis-steps);position:absolute;left:0;top:.08rem;width:1.55rem;height:1.55rem;border-radius:50%;background:#FFF1E6;border:1px solid #F3D4C7;color:var(--primary);display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:700}
+.analysis-list{list-style:none;display:grid;gap:.55rem;margin-top:.8rem}
+.analysis-list li{position:relative;padding-left:1.2rem;color:var(--gray);font-size:.95rem}
+.analysis-list li::before{content:'';position:absolute;left:0;top:.62rem;width:7px;height:7px;border-radius:50%;background:var(--primary)}
+.section-divider{margin:3rem 0 1.5rem}
+.result-callout{margin-top:1.15rem;padding:1.15rem 1.25rem;border-radius:16px;background:linear-gradient(135deg,#FFF7ED,#FFF1E6);border:1px solid #F3D4C7;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.result-callout strong{display:block;color:var(--primary);margin-bottom:.35rem}
+.result-callout p{color:var(--dark);font-size:.96rem}
+.pricing-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.25rem;margin-top:1.5rem}
+.price-card{background:#fff;border:1px solid #E5E7EB;border-radius:20px;padding:1.5rem;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.price-card-accent{background:linear-gradient(135deg,#FFF7ED,#FFF1E6);border-color:#F3D4C7;box-shadow:0 10px 30px rgba(166,79,42,.10)}
+.price-top{display:flex;justify-content:space-between;gap:1rem;align-items:flex-start;margin-bottom:.9rem}
+.price-badge,.price-saving{display:inline-flex;align-items:center;padding:.38rem .72rem;border-radius:999px;font-size:.76rem;font-weight:700;letter-spacing:.04em}
+.price-badge{background:#F4F4F5;color:var(--dark)}
+.price-card-accent .price-badge{background:#F6E9DF;color:var(--primary)}
+.price-saving{display:block;margin-top:.95rem;padding:.72rem .85rem;border-radius:14px;background:rgba(166,79,42,.08);color:#A64F2A}
+.price-card>.price-badge{margin-bottom:.85rem}
+.price-title{font-size:1.16rem;font-weight:800;line-height:1.25}
+.price-card h3{font-size:1.15rem;margin-bottom:.65rem}
+.price-value{font-size:2rem;font-weight:800;line-height:1;color:var(--dark);margin-bottom:.2rem;text-align:right;white-space:nowrap}
+.price-value span{font-size:.95rem;font-weight:600;color:var(--gray)}
+.price-old{margin-top:.45rem;font-size:.92rem;color:#9CA3AF;text-decoration:line-through;text-align:right}
+.price-note,.price-meta{color:var(--gray);font-size:.94rem}
+.price-list{list-style:none;display:grid;gap:.55rem;margin-top:1rem}
+.price-list li{position:relative;padding-left:1.15rem;color:var(--gray);font-size:.94rem}
+.price-list li::before{content:'';position:absolute;left:0;top:.62rem;width:7px;height:7px;border-radius:50%;background:var(--primary)}
+.final-recommendation{margin-top:1.5rem;padding:2rem;border-radius:22px;background:linear-gradient(135deg,var(--dark),var(--dark2));color:#fff;box-shadow:0 10px 30px rgba(43,36,31,.14)}
+.final-recommendation h3{font-size:1.35rem;margin-bottom:.8rem}
+.final-recommendation p{color:rgba(255,255,255,.82);font-size:1rem}
+.final-recommendation p+p{margin-top:.9rem}
+@media (max-width:768px){.analysis-grid{grid-template-columns:1fr}.analysis-lead{padding:1.2rem 1.15rem}.analysis-card{padding:1.15rem}.analysis-lead h3,.analysis-card h3{font-size:1rem}}
+@media (max-width:768px){.pricing-grid{grid-template-columns:1fr}.price-top{display:block}.price-value{font-size:1.7rem;text-align:left;margin-top:.5rem}.price-old{text-align:left}.final-recommendation{padding:1.35rem}}
+</style>
+</head>
+<body>
+<main>
+<section class="hero">
+<div class="container">
+<h1>
+<span class="hero-line hero-line-main">Коммерческое предложение по Яндекс Директ и SEO</span>
+<span class="hero-line hero-line-brand">для сайта gbi-agat.ru</span>
+</h1>
+<p>Мы предлагаем два канала привлечения заявок:<br>Яндекс Директ - для быстрого запуска обращений уже в ближайшее время;<br>SEO-продвижение - для роста видимости сайта в поиске и увеличения числа заявок в долгосрочной перспективе.</p>
+<p>Ниже - основные цифры, выводы, состав работ и стоимость по каждому направлению.</p>
+<div class="hero-stats">
+<div class="hero-stat">
+<div class="hero-stat-value">29 734</div>
+<div class="hero-stat-label">прогнозных показов в месяц по данным Яндекс Директ</div>
+</div>
+<div class="hero-stat">
+<div class="hero-stat-value">4 003</div>
+<div class="hero-stat-label">прогнозных перехода в месяц при выбранном объеме трафика</div>
+</div>
+<div class="hero-stat">
+<div class="hero-stat-value">15 / 15</div>
+<div class="hero-stat-label">запросов вне топ-50 в Яндексе и Google по состоянию на 8 апреля 2026</div>
+</div>
+</div>
+</div>
+</section>
+
+
+<section id="bounce-analysis" class="bg-white">
+<div class="container">
+<div class="section-header fade-in">
+<h2>Текущее положение дел</h2>
+</div>
+<div class="analysis-lead fade-in">
+<p><strong>Спрос на продукцию есть уже сейчас</strong>, и его можно привлекать двумя каналами.</p>
+<ul class="analysis-list">
+<li><strong>Яндекс Директ</strong> позволяет быстро получать целевые переходы и заявки после запуска рекламы.</li>
+<li><strong>SEO</strong> решает другую задачу - усиливает видимость сайта в поиске там, где сейчас позиции слабые или отсутствуют вовсе.</li>
+<li><strong>По ряду коммерческих запросов сайт не входит даже в топ-50</strong>, а значит, органический канал заявок сейчас практически не работает.</li>
+</ul>
+<div class="analysis-highlight"><strong>Оптимальный формат сейчас - запускать рекламу и SEO параллельно.</strong> Реклама дает быстрый результат, а SEO формирует устойчивый поток обращений на перспективу.</div>
+</div>
+</div>
+</section>
+
+<section id="meta">
+<div class="container">
+<div class="section-header fade-in">
+<h2>Прогнозные значения Яндекс Директ</h2>
+<p>Таблица составлена на основе прогноза Яндекс Директ и показывает ориентировочные значения по показам, переходам, средней цене клика и рекламному бюджету по основным коммерческим запросам. Важно учитывать, что это не фиксированные показатели, а прогнозные данные: фактические результаты могут отличаться в зависимости от аукциона, уровня конкуренции, ставок, сезонности и настроек рекламных кампаний. Поэтому итоговый рекламный бюджет на практике может корректироваться как в большую, так и в меньшую сторону.</p>
+</div>
+<div class="table-card fade-in mobile-collapsible" id="direct-forecast" data-visible-rows="5" data-keep-total="true">
+<div class="table-card-head">
+<h3>Прогнозные значения Яндекс Директ</h3>
+</div>
+<div class="table-wrap">
+<table class="market-table">
+<thead>
+<tr>
+<th>Запрос</th>
+<th>Показы / мес.</th>
+<th>Переходы / мес.</th>
+<th>Средняя цена клика</th>
+<th>Прогнозный бюджет / мес.</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-label="Запрос">бордюр купить</td><td data-label="Показы / мес.">2 775</td><td data-label="Переходы / мес.">355</td><td data-label="Средняя цена клика">54,9 ₽</td><td data-label="Прогнозный бюджет / мес.">19 489,5 ₽</td></tr>
+<tr><td data-label="Запрос">бордюр стоимость</td><td data-label="Показы / мес.">100</td><td data-label="Переходы / мес.">13</td><td data-label="Средняя цена клика">30,5 ₽</td><td data-label="Прогнозный бюджет / мес.">396,5 ₽</td></tr>
+<tr><td data-label="Запрос">бордюр укладка</td><td data-label="Показы / мес.">309</td><td data-label="Переходы / мес.">15</td><td data-label="Средняя цена клика">41,0 ₽</td><td data-label="Прогнозный бюджет / мес.">615,0 ₽</td></tr>
+<tr><td data-label="Запрос">бордюр цена</td><td data-label="Показы / мес.">814</td><td data-label="Переходы / мес.">104</td><td data-label="Средняя цена клика">62,5 ₽</td><td data-label="Прогнозный бюджет / мес.">6 500,0 ₽</td></tr>
+<tr><td data-label="Запрос">бордюрный камень</td><td data-label="Показы / мес.">1 582</td><td data-label="Переходы / мес.">140</td><td data-label="Средняя цена клика">46,1 ₽</td><td data-label="Прогнозный бюджет / мес.">6 454,0 ₽</td></tr>
+<tr><td data-label="Запрос">бордюрный камень истра</td><td data-label="Показы / мес.">2</td><td data-label="Переходы / мес.">2</td><td data-label="Средняя цена клика">3,6 ₽</td><td data-label="Прогнозный бюджет / мес.">7,2 ₽</td></tr>
+<tr><td data-label="Запрос">бордюрный камень купить</td><td data-label="Показы / мес.">330</td><td data-label="Переходы / мес.">55</td><td data-label="Средняя цена клика">64,8 ₽</td><td data-label="Прогнозный бюджет / мес.">3 564,0 ₽</td></tr>
+<tr><td data-label="Запрос">бордюрный камень укладка</td><td data-label="Показы / мес.">26</td><td data-label="Переходы / мес.">2</td><td data-label="Средняя цена клика">26,2 ₽</td><td data-label="Прогнозный бюджет / мес.">52,4 ₽</td></tr>
+<tr><td data-label="Запрос">бордюрный камень цена</td><td data-label="Показы / мес.">206</td><td data-label="Переходы / мес.">26</td><td data-label="Средняя цена клика">56,8 ₽</td><td data-label="Прогнозный бюджет / мес.">1 476,8 ₽</td></tr>
+<tr><td data-label="Запрос">брусчатка заказать</td><td data-label="Показы / мес.">19</td><td data-label="Переходы / мес.">5</td><td data-label="Средняя цена клика">58,7 ₽</td><td data-label="Прогнозный бюджет / мес.">293,5 ₽</td></tr>
+<tr><td data-label="Запрос">брусчатка купить</td><td data-label="Показы / мес.">3 217</td><td data-label="Переходы / мес.">530</td><td data-label="Средняя цена клика">140,0 ₽</td><td data-label="Прогнозный бюджет / мес.">74 200,0 ₽</td></tr>
+<tr><td data-label="Запрос">брусчатка стоимость</td><td data-label="Показы / мес.">358</td><td data-label="Переходы / мес.">70</td><td data-label="Средняя цена клика">51,6 ₽</td><td data-label="Прогнозный бюджет / мес.">3 612,0 ₽</td></tr>
+<tr><td data-label="Запрос">брусчатка укладка</td><td data-label="Показы / мес.">1 907</td><td data-label="Переходы / мес.">139</td><td data-label="Средняя цена клика">65,9 ₽</td><td data-label="Прогнозный бюджет / мес.">9 160,1 ₽</td></tr>
+<tr><td data-label="Запрос">брусчатка цена</td><td data-label="Показы / мес.">1 913</td><td data-label="Переходы / мес.">364</td><td data-label="Средняя цена клика">72,0 ₽</td><td data-label="Прогнозный бюджет / мес.">26 208,0 ₽</td></tr>
+<tr><td data-label="Запрос">вибропрессованная плитка</td><td data-label="Показы / мес.">432</td><td data-label="Переходы / мес.">50</td><td data-label="Средняя цена клика">89,8 ₽</td><td data-label="Прогнозный бюджет / мес.">4 490,0 ₽</td></tr>
+<tr><td data-label="Запрос">вибропрессованная плитка истра</td><td data-label="Показы / мес.">3</td><td data-label="Переходы / мес.">2</td><td data-label="Средняя цена клика">4,7 ₽</td><td data-label="Прогнозный бюджет / мес.">9,4 ₽</td></tr>
+<tr><td data-label="Запрос">вибропрессованная плитка купить</td><td data-label="Показы / мес.">87</td><td data-label="Переходы / мес.">18</td><td data-label="Средняя цена клика">64,0 ₽</td><td data-label="Прогнозный бюджет / мес.">1 152,0 ₽</td></tr>
+<tr><td data-label="Запрос">вибропрессованная плитка укладка</td><td data-label="Показы / мес.">8</td><td data-label="Переходы / мес.">2</td><td data-label="Средняя цена клика">11,8 ₽</td><td data-label="Прогнозный бюджет / мес.">23,6 ₽</td></tr>
+<tr><td data-label="Запрос">вибропрессованная плитка цена</td><td data-label="Показы / мес.">12</td><td data-label="Переходы / мес.">4</td><td data-label="Средняя цена клика">118,5 ₽</td><td data-label="Прогнозный бюджет / мес.">474,0 ₽</td></tr>
+<tr><td data-label="Запрос">тротуарная плитка истра</td><td data-label="Показы / мес.">446</td><td data-label="Переходы / мес.">33</td><td data-label="Средняя цена клика">184,7 ₽</td><td data-label="Прогнозный бюджет / мес.">6 095,1 ₽</td></tr>
+<tr><td data-label="Запрос">тротуарная плитка купить</td><td data-label="Показы / мес.">7 547</td><td data-label="Переходы / мес.">1 192</td><td data-label="Средняя цена клика">100,3 ₽</td><td data-label="Прогнозный бюджет / мес.">119 557,6 ₽</td></tr>
+<tr><td data-label="Запрос">тротуарная плитка укладка</td><td data-label="Показы / мес.">4 508</td><td data-label="Переходы / мес.">335</td><td data-label="Средняя цена клика">70,1 ₽</td><td data-label="Прогнозный бюджет / мес.">23 483,5 ₽</td></tr>
+<tr><td data-label="Запрос">тротуарная плитка цена</td><td data-label="Показы / мес.">3 133</td><td data-label="Переходы / мес.">547</td><td data-label="Средняя цена клика">50,8 ₽</td><td data-label="Прогнозный бюджет / мес.">27 787,6 ₽</td></tr>
+<tr class="total"><td data-label="Запрос"><strong>Итого с учетом выбранного объема трафика</strong></td><td data-label="Показы / мес."><strong>29 734</strong></td><td data-label="Переходы / мес."><strong>4 003</strong></td><td data-label="Средняя цена клика"><strong>83,7 ₽</strong></td><td data-label="Прогнозный бюджет / мес."><strong>335 101,8 ₽</strong></td></tr>
+</tbody>
+</table>
+</div>
+<div class="table-toggle-wrap">
+<button class="table-toggle" type="button" aria-expanded="false">Показать еще</button>
+</div>
+<div class="result-callout">
+<strong>Вывод по Яндекс Директ</strong>
+<p>Спрос в поиске есть уже сейчас, поэтому Яндекс Директ можно использовать как быстрый источник обращений. На старте разумно брать в работу самые горячие кластеры и масштабировать кампании после первых данных по лидам.</p>
+</div>
+</div>
+
+<div class="section-header fade-in section-divider">
+<h2>Текущие позиции сайта по SEO</h2>
+<p>Таблица ниже показывает текущие позиции сайта по основным коммерческим запросам в Яндексе и Google. Если указано «нет в топ-50», это означает, что сайт не попадает даже в первые 5 страниц выдачи и практически не получает органический трафик по этим запросам. Для бизнеса это прямой сигнал: по значимой части коммерческого спроса сайт сейчас уступает конкурентам и не использует возможности SEO как канала привлечения заявок.</p>
+</div>
+<div class="table-card fade-in mobile-collapsible" id="seo-positions" data-visible-rows="5" data-keep-total="false">
+<div class="table-card-head">
+<h3>Текущие позиции сайта по SEO</h3>
+</div>
+<div class="table-wrap">
+<table class="market-table">
+<thead>
+<tr>
+<th>Запрос</th>
+<th>Яндекс</th>
+<th>Google</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-label="Запрос">тротуарная плитка</td><td data-label="Яндекс">нет в топ-50</td><td data-label="Google">нет в топ-50</td></tr>
+<tr><td data-label="Запрос">тротуарная плитка истра</td><td data-label="Яндекс">нет в топ-50</td><td data-label="Google">нет в топ-50</td></tr>
+<tr><td data-label="Запрос">тротуарная плитка купить</td><td data-label="Яндекс">нет в топ-50</td><td data-label="Google">нет в топ-50</td></tr>
+<tr><td data-label="Запрос">тротуарная плитка укладка</td><td data-label="Яндекс">нет в топ-50</td><td data-label="Google">нет в топ-50</td></tr>
+<tr><td data-label="Запрос">тротуарная плитка цена</td><td data-label="Яндекс">нет в топ-50</td><td data-label="Google">нет в топ-50</td></tr>
+<tr><td data-label="Запрос">вибропрессованная плитка</td><td data-label="Яндекс">нет в топ-50</td><td data-label="Google">нет в топ-50</td></tr>
+<tr><td data-label="Запрос">вибропрессованная плитка истра</td><td data-label="Яндекс">нет в топ-50</td><td data-label="Google">нет в топ-50</td></tr>
+<tr><td data-label="Запрос">вибропрессованная плитка купить</td><td data-label="Яндекс">нет в топ-50</td><td data-label="Google">нет в топ-50</td></tr>
+<tr><td data-label="Запрос">вибропрессованная плитка укладка</td><td data-label="Яндекс">нет в топ-50</td><td data-label="Google">нет в топ-50</td></tr>
+<tr><td data-label="Запрос">вибропрессованная плитка цена</td><td data-label="Яндекс">нет в топ-50</td><td data-label="Google">нет в топ-50</td></tr>
+<tr><td data-label="Запрос">бордюрный камень</td><td data-label="Яндекс">нет в топ-50</td><td data-label="Google">нет в топ-50</td></tr>
+<tr><td data-label="Запрос">бордюрный камень истра</td><td data-label="Яндекс">нет в топ-50</td><td data-label="Google">нет в топ-50</td></tr>
+<tr><td data-label="Запрос">бордюрный камень купить</td><td data-label="Яндекс">нет в топ-50</td><td data-label="Google">нет в топ-50</td></tr>
+<tr><td data-label="Запрос">бордюрный камень укладка</td><td data-label="Яндекс">нет в топ-50</td><td data-label="Google">нет в топ-50</td></tr>
+<tr><td data-label="Запрос">бордюрный камень цена</td><td data-label="Яндекс">нет в топ-50</td><td data-label="Google">нет в топ-50</td></tr>
+</tbody>
+</table>
+</div>
+<div class="table-toggle-wrap">
+<button class="table-toggle" type="button" aria-expanded="false">Показать еще</button>
+</div>
+<div class="result-callout">
+<strong>Вывод по SEO</strong>
+<p>Сайт сейчас практически не виден в поиске по коммерческим запросам. Это значит, что бизнес недополучает бесплатный органический трафик, а часть потенциальных заявок уходит конкурентам. Чтобы SEO стало рабочим каналом привлечения клиентов, его нужно запускать системно: с базовых исправлений сайта и дальнейшего ежемесячного сопровождения.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="schema" class="bg-white">
+<div class="container">
+<div class="section-header fade-in">
+<h2>Тарифы и формат сотрудничества</h2>
+<p>Ниже - тарифы на наши услуги и компактный состав работ по каждому формату. Бюджет Яндекс Директ оплачивается отдельно как расход рекламной системы.</p>
+</div>
+
+<div class="pricing-grid fade-in" id="tariffs">
+<article class="price-card">
+<div class="price-badge">Яндекс Директ</div>
+<div class="price-top">
+<div>
+<div class="price-title">Настройка и ведение Яндекс Директ</div>
+</div>
+<div class="price-value">23 000 ₽ <span>/ мес</span></div>
+</div>
+<p class="price-note">Рекомендуемый рекламный бюджет: <strong>335 000 ₽ / мес</strong>. Бюджет оплачивается отдельно от стоимости ведения.</p>
+<ul class="price-list">
+<li>сбор и кластеризация ключевых запросов</li>
+<li>проработка минус-слов</li>
+<li>подготовка структуры рекламных кампаний</li>
+<li>написание объявлений</li>
+<li>настройка аналитики и целей</li>
+<li>запуск кампаний</li>
+<li>ежедневный или регулярный контроль</li>
+<li>корректировка ставок и площадок</li>
+<li>оптимизация по заявкам и стоимости обращения</li>
+<li>отчетность по результатам</li>
+</ul>
+</article>
+
+<article class="price-card">
+<div class="price-badge">SEO разово</div>
+<div class="price-top">
+<div>
+<div class="price-title">SEO-разовые работы</div>
+</div>
+<div class="price-value">50 000 ₽</div>
+</div>
+<p class="price-note">Базовая оптимизация сайта: исправление основных ошибок сайта и подготовка фундамента для дальнейшего роста.</p>
+<ul class="price-list">
+<li>первичный аудит сайта</li>
+<li>исправление базовых технических и коммерческих ошибок</li>
+<li>проработка meta-тегов и заголовков</li>
+<li>рекомендации по структуре приоритетных страниц</li>
+<li>базовая оптимизация посадочных страниц</li>
+<li>подготовка стартовой стратегии роста</li>
+</ul>
+</article>
+
+<article class="price-card">
+<div class="price-badge">SEO ежемесячно</div>
+<div class="price-top">
+<div>
+<div class="price-title">Ежемесячное SEO-продвижение</div>
+</div>
+<div class="price-value">40 000 ₽ <span>/ мес</span></div>
+</div>
+<p class="price-note">Формат системной работы для роста видимости сайта в поиске и развития органического канала заявок.</p>
+<ul class="price-list">
+<li>расширение семантики</li>
+<li>развитие структуры сайта</li>
+<li>подготовка ТЗ на новые и существующие страницы</li>
+<li>оптимизация мета-тегов и контента</li>
+<li>внутренняя перелинковка</li>
+<li>контроль индексации и технического состояния</li>
+<li>анализ позиций и конкурентов</li>
+<li>ежемесячная корректировка стратегии</li>
+</ul>
+</article>
+
+<article class="price-card price-card-accent">
+<div class="price-badge">Комплекс</div>
+<div class="price-top">
+<div>
+<div class="price-title">SEO + реклама</div>
+</div>
+<div>
+<div class="price-value">58 000 ₽ <span>/ мес</span></div>
+<div class="price-old">63 000 ₽ / мес</div>
+</div>
+</div>
+<p class="price-note">Комплексный формат объединяет быстрый результат от рекламы и системный рост органического канала в одной стратегии.</p>
+<div class="price-saving">Скидка 7,9% и экономия 5 000 ₽ / мес относительно отдельных услуг</div>
+<ul class="price-list">
+<li>ведение Яндекс Директ</li>
+<li>ежемесячное SEO-продвижение</li>
+<li>единая стратегия по трафику и заявкам</li>
+<li>совместная аналитика по платному и органическому каналу</li>
+<li>приоритизация работ по тому, что быстрее дает результат</li>
+</ul>
+</article>
+</div>
+
+<div class="final-recommendation">
+<h3>Итоговая рекомендация</h3>
+<p>На текущем этапе оптимально запускать Яндекс Директ и SEO параллельно. Реклама позволит быстро начать получать целевые обращения уже после запуска кампаний, а SEO - постепенно усилить сайт, повысить его видимость по коммерческим запросам и снизить зависимость от платного трафика.</p>
+<p>Сейчас сайт слабо представлен в органической выдаче, поэтому откладывать SEO нецелесообразно: чем позже начнется системная работа, тем дольше бизнес будет терять часть спроса в поиске.</p>
+<p>Именно поэтому наиболее рациональный вариант - использовать комплексный формат, в котором быстрый результат от рекламы сочетается с долгосрочным ростом из SEO.</p>
+</div>
+</div>
+</section>
+</main>
+<footer>Коммерческое предложение для ГБИ АГАТ - Яндекс Директ и SEO, подготовлено на основе данных от 08.04.2026</footer>
+<script>
+(() => {
+  const MOBILE_WIDTH = 768;
+  const cards = [...document.querySelectorAll('.table-card.mobile-collapsible')];
+
+  const applyState = (card) => {
+    const rows = [...card.querySelectorAll('tbody tr')];
+    const button = card.querySelector('.table-toggle');
+    const visibleRows = Number(card.dataset.visibleRows || 5);
+    const keepTotal = card.dataset.keepTotal === 'true';
+    const isMobile = window.innerWidth <= MOBILE_WIDTH;
+    const regularRows = rows.filter((row) => !(keepTotal && row.classList.contains('total')));
+    const hasToggle = regularRows.length > visibleRows;
+    const expanded = card.dataset.expanded === 'true';
+
+    rows.forEach((row, index) => {
+      const isTotal = keepTotal && row.classList.contains('total');
+      const shouldHide = isMobile && hasToggle && !expanded && !isTotal && index >= visibleRows;
+      row.classList.toggle('is-hidden-mobile', shouldHide);
+    });
+
+    card.classList.toggle('has-toggle', isMobile && hasToggle);
+    card.classList.toggle('is-collapsed', isMobile && hasToggle && !expanded);
+
+    if (button) {
+      button.hidden = !(isMobile && hasToggle);
+      button.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+      button.textContent = expanded ? 'Свернуть' : 'Показать еще';
+    }
+  };
+
+  cards.forEach((card) => {
+    const button = card.querySelector('.table-toggle');
+    card.dataset.expanded = 'false';
+
+    if (button) {
+      button.addEventListener('click', () => {
+        card.dataset.expanded = card.dataset.expanded === 'true' ? 'false' : 'true';
+        applyState(card);
+      });
+    }
+  });
+
+  const refresh = () => cards.forEach(applyState);
+  window.addEventListener('resize', refresh);
+  refresh();
+})();
+</script>
+</body>
+</html>

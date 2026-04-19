@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SEO-работы по сайту ГБИ АГАТ</title>
+<style>
+:root{--primary:#4A7B3C;--accent:#8FB978;--dark:#1E2A1C;--dark2:#2B3B28;--light:#F6F8F4;--gray:#6B7280}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:var(--light);color:var(--dark);line-height:1.6;overflow-x:clip}img{max-width:100%;display:block}
+.hero{background:linear-gradient(135deg,var(--dark) 0%,var(--dark2) 100%);color:#fff;padding:4.4rem 2rem 2.6rem;text-align:center}.hero h1{font-size:2.55rem;font-weight:800;margin-bottom:.9rem;line-height:1.12;overflow-wrap:anywhere}.hero h1 .hero-line{display:block}.hero h1 .hero-line-main{font-size:.82em;color:#fff}.hero h1 .hero-line-brand{color:var(--accent)}.hero p{font-size:1.06rem;color:rgba(255,255,255,.64);max-width:760px;margin:0 auto 1.35rem;overflow-wrap:anywhere}.hero-stats{display:flex;justify-content:center;gap:2.2rem;flex-wrap:wrap;margin-bottom:0}.hero-stat-value{font-size:2.15rem;font-weight:800;color:var(--accent)}.hero-stat-label{font-size:.82rem;color:rgba(255,255,255,.52);margin-top:.25rem}
+section{padding:5rem 2rem}.container{margin:0 auto;width:100%;max-width:1240px}.bg-white{background:#fff}.section-header{text-align:center;margin-bottom:3rem}.section-header h2{font-size:2rem;font-weight:800;margin-bottom:.55rem;overflow-wrap:anywhere}.section-header p{color:var(--gray);font-size:1.02rem;max-width:760px;margin:0 auto;overflow-wrap:anywhere}
+.cards{display:grid;grid-template-columns:1fr;gap:1.5rem}.cards>*{min-width:0}.code-card,.thumb-card{background:#fff;border-radius:16px;padding:2rem;border:1px solid #E5E7EB;transition:transform .2s,box-shadow .2s;min-width:0}.code-card:hover,.thumb-card:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,.08)}.code-card h3,.thumb-card h3{font-size:1.1rem;margin-bottom:.55rem}.code-card p,.thumb-card p{color:var(--gray);font-size:.95rem}
+.table-wrap{overflow:auto;border-radius:16px;box-shadow:0 1px 3px rgba(0,0,0,.05)}.market-table{width:100%;border-collapse:collapse;background:#fff}.market-table th{text-align:left;padding:1rem 1.15rem;background:var(--dark);color:#fff;font-weight:600;font-size:.84rem;text-transform:uppercase;letter-spacing:.05em}.market-table td{padding:1rem 1.15rem;border-bottom:1px solid #E5E7EB;font-size:.94rem;vertical-align:top}.audit-link{display:inline;color:var(--primary);font-weight:400;text-decoration:none;overflow-wrap:anywhere;word-break:break-word}.audit-link:hover{text-decoration:underline}
+.alt-summary-main{display:flex;align-items:center;gap:.9rem;min-width:0;flex:1}.alt-index{min-width:32px;height:32px;border-radius:50%;background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:center;font-size:.84rem;font-weight:700}.alt-summary-text{font-size:.98rem}.flow-layout{margin-top:2rem;display:grid;gap:1rem}.flow-demo{background:#fff;border:1px solid #E5E7EB;border-radius:18px;overflow:hidden}.flow-demo summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:flex-start;gap:1rem;padding:1.05rem 1.25rem;font-weight:700}.flow-demo summary::-webkit-details-marker{display:none}.flow-demo summary::after{content:'›';font-size:1.3rem;color:#9CA3AF;transition:transform .2s ease;flex-shrink:0;margin-left:.15rem}.flow-demo[open] summary{border-bottom:1px solid #E5E7EB}.flow-demo[open] summary::after{transform:rotate(90deg)}.flow-demo-body{padding:1.25rem;display:grid;gap:1rem}.flow-section{background:#FCFCFC;border:1px solid #ECECEC;border-radius:14px;padding:1rem 1.1rem}.flow-section.accent{background:linear-gradient(135deg,#F0F6EC,#F8FBF5);border-color:#D4E3C9}.flow-section.done{background:linear-gradient(135deg,#E8F1E2,#F3F9EE);border-color:#BED4B0}.flow-section h4{font-size:.82rem;letter-spacing:.05em;text-transform:uppercase;color:var(--primary);margin-bottom:.6rem}.flow-section p{color:var(--gray);font-size:.95rem}.flow-section p:last-child{margin-bottom:0}.flow-section code{background:#F5F6F8;color:var(--dark);padding:.12rem .38rem;border-radius:6px;font-size:.9em}.flow-list{list-style:none;display:grid;gap:.55rem}.flow-list li{position:relative;padding-left:1.2rem;color:var(--gray);font-size:.94rem}.flow-list li::before{content:'';position:absolute;left:0;top:.62rem;width:7px;height:7px;border-radius:50%;background:var(--primary)}
+.flow-summary-tag{display:inline-block;padding:0;background:transparent;border:none;color:#8B929E;font-size:.82rem;font-weight:500;white-space:normal;max-width:12rem;text-align:right;margin-left:auto;line-height:1.2}
+.flow-summary-tag.done{color:var(--primary)}
+.code-card pre{margin-top:1rem;background:var(--dark);color:#F9FAFB;border-radius:12px;padding:1rem;overflow:auto;max-width:100%;font-size:.82rem;line-height:1.6;font-family:Consolas,Monaco,monospace;-webkit-overflow-scrolling:touch}
+footer{background:var(--dark);color:rgba(255,255,255,.38);text-align:center;padding:2rem;font-size:.85rem}
+.table-card{background:#fff;border:1px solid #E5E7EB;border-radius:16px;overflow:hidden;margin-top:1.5rem}
+.table-card-head{padding:1.4rem 1.5rem 1rem}
+.table-card-head h3{font-size:1.18rem;margin-bottom:.45rem}.table-card-head p{color:var(--gray);font-size:.95rem}
+.files-grid{display:grid;grid-template-columns:1fr;gap:1.5rem}.files-grid>*{min-width:0}.files-grid .code-card{height:100%;min-width:0}
+
+.photo-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:1.5rem}
+.photo-grid figure{margin:0;border-radius:12px;overflow:hidden;border:1px solid #E5E7EB;background:#fff;display:flex;flex-direction:column}
+.photo-grid img{width:100%;height:220px;object-fit:contain;display:block;padding:12px;background:#fff}
+.photo-grid figcaption{margin-top:auto;padding:.65rem .8rem;font-size:.82rem;color:var(--gray);text-align:center;background:#FAFBF8;border-top:1px solid #ECECEC}
+.photo-note{background:linear-gradient(135deg,#F0F6EC,#F8FBF5);border:1px solid #D4E3C9;border-radius:14px;padding:1.25rem 1.4rem;margin-top:1.5rem;color:var(--gray);font-size:.95rem}
+.photo-note strong{color:var(--dark)}
+
+.summary-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.5rem}
+.summary-card{background:#fff;border:1px solid #E5E7EB;border-radius:14px;padding:1.25rem 1.35rem}
+.summary-card .num{font-size:1.8rem;font-weight:800;color:var(--primary);line-height:1}
+.summary-card .lbl{color:var(--gray);font-size:.9rem;margin-top:.4rem}
+
+@media (max-width:900px){.photo-grid{grid-template-columns:repeat(2,1fr)}.summary-grid{grid-template-columns:1fr}}
+@media (max-width:768px){.hero{padding:3.8rem 1rem 2.3rem}.hero h1{font-size:clamp(1.7rem,8vw,2rem);line-height:1.12}.hero p{font-size:1rem}.hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:1rem;max-width:420px;margin:0 auto}.hero-stat:last-child{grid-column:1/-1;justify-self:center}.hero-stat-value{font-size:1.6rem}.hero-stat-label{font-size:.75rem}section{padding:3rem 1rem}.section-header{margin-bottom:2.1rem}.section-header h2{font-size:1.5rem}.section-header p{font-size:.92rem}.cards{grid-template-columns:1fr}.flow-demo summary{padding:.95rem 1rem;gap:.75rem;align-items:flex-start}.alt-summary-text{font-size:.92rem;line-height:1.35}.flow-summary-tag{font-size:.76rem;max-width:9rem}.flow-demo-body{padding:1rem}.flow-section{padding:.9rem 1rem}.market-table th,.market-table td{padding:.72rem .8rem;font-size:.82rem}.code-card{padding:1.2rem}.code-card pre{padding:.9rem;font-size:.78rem}#meta .market-table thead{display:none}#meta .market-table,#meta .market-table tbody,#meta .market-table tr,#meta .market-table td{display:block;width:100%}#meta .market-table tr{padding:1rem 1rem .35rem;border-bottom:1px solid #E5E7EB}#meta .market-table td{border:none;padding:.35rem 0 .8rem;font-size:.88rem}#meta .market-table td::before{content:attr(data-label);display:block;margin-bottom:.32rem;color:var(--gray);font-size:.7rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase}}
+</style>
+</head>
+<body>
+<main>
+
+<section class="hero">
+  <div class="container">
+    <h1>
+      <span class="hero-line hero-line-main">SEO-работы по сайту</span>
+      <span class="hero-line hero-line-brand">ГБИ АГАТ</span>
+    </h1>
+    <p>Комплексная поисковая оптимизация производителя тротуарной плитки в Истре. Техническая база, контент, микроразметка и подготовка к запуску в Яндекс Бизнесе.</p>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-value">24</div>
+        <div class="hero-stat-label">выполненных пункта</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-value">22</div>
+        <div class="hero-stat-label">страницы с новыми мета-тегами</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-value">5</div>
+        <div class="hero-stat-label">типов микроразметки Schema.org</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="overview">
+  <div class="container">
+    <div class="section-header">
+      <h2>Что сделано: основные блоки работ</h2>
+      <p>Все пункты объединены по смыслу. В каждой карточке — коротко: что было, что сделали и что это даёт бизнесу.</p>
+    </div>
+    <div class="flow-layout">
+
+      <details class="flow-demo" open>
+        <summary>
+          <span class="alt-summary-main">
+            <span class="alt-index">1</span>
+            <span class="alt-summary-text">Мета-теги (Title и Description) для 22 страниц</span>
+          </span>
+          <span class="flow-summary-tag done">Выполнено</span>
+        </summary>
+        <div class="flow-demo-body">
+          <div class="flow-section accent">
+            <h4>Что это</h4>
+            <p>Title — заголовок, который виден в поисковой выдаче синей ссылкой. Description — краткое описание под ним. От этих двух строк зависит, кликнет пользователь на сайт или пройдёт мимо.</p>
+          </div>
+          <div class="flow-section">
+            <h4>Что было</h4>
+            <p>На большинстве страниц title и description генерировались автоматически и были типовыми: «Главная страница — ГБИ АГАТ», «О нас — ГБИ АГАТ», «Архивы Бордюрный камень — ГБИ АГАТ». Описаний чаще всего не было вообще. В выдаче страницы выглядели одинаково и не раскрывали свою тему.</p>
+          </div>
+          <div class="flow-section done">
+            <h4>Что сделали</h4>
+            <p>Прописали уникальные title и description для 22 страниц:</p>
+            <ul class="flow-list">
+              <li>10 категорий каталога (бордюрный камень, вибропрессованная плитка, брусчатка и т.д.)</li>
+              <li>главная страница каталога + страница укладки под ключ</li>
+              <li>10 страниц сайта: главная, о нас, контакты, доставка, прайс-лист, полезные статьи, сертификаты, отзывы, дилерам, галерея работ</li>
+            </ul>
+            <p>Примеры готовых мета-тегов — в разделе «Таблица мета-тегов» ниже.</p>
+          </div>
+          <div class="flow-section">
+            <h4>Что это даёт</h4>
+            <p>В поисковой выдаче каждая страница представлена своим заголовком с ключевым запросом. Повышается кликабельность (CTR), и поисковик точнее определяет тему каждой страницы для ранжирования по целевым запросам.</p>
+          </div>
+        </div>
+      </details>
+
+      <details class="flow-demo">
+        <summary>
+          <span class="alt-summary-main">
+            <span class="alt-index">2</span>
+            <span class="alt-summary-text">Короткие URL каталога и технические редиректы</span>
+          </span>
+          <span class="flow-summary-tag done">Выполнено</span>
+        </summary>
+        <div class="flow-demo-body">
+          <div class="flow-section accent">
+            <h4>Что это</h4>
+            <p>URL (адрес страницы) — тоже SEO-сигнал. Чем короче адрес и чем ближе ключевое слово к домену, тем лучше. Редирект (301) — автоматическое перенаправление со старого адреса на новый; сохраняет весь накопленный поисковый вес.</p>
+          </div>
+          <div class="flow-section">
+            <h4>Что было</h4>
+            <ul class="flow-list">
+              <li>Адреса категорий с лишним префиксом: <code>/catalog-category/vibropressovannaya-plitka/</code></li>
+              <li>Сама страница <code>/catalog-category/</code> выдавала ошибку 404</li>
+              <li>Главная была доступна по 4 разным адресам: с <code>www</code>, с <code>http</code>, с <code>/index.php</code>, с двойным слэшем. Поисковик считает их дублями, и вес главной «размазывается» между ними</li>
+            </ul>
+          </div>
+          <div class="flow-section done">
+            <h4>Что сделали</h4>
+            <ul class="flow-list">
+              <li>Убрали префикс <code>/catalog-category/</code> из адресов — категории стали короткими: <code>/vibropressovannaya-plitka/</code>, <code>/bordyurnyj-kamen/</code> и т.д.</li>
+              <li>Со всех старых адресов настроены 301-редиректы на новые — накопленный поисковый вес не теряется</li>
+              <li>Все варианты главной (www, http, index.php, //) теперь редиректят на единственный канонический адрес <code>https://gbi-agat.ru/</code></li>
+            </ul>
+          </div>
+          <div class="flow-section">
+            <h4>Что это даёт</h4>
+            <p>Короткие адреса с ключами ближе к корню домена — позитивный сигнал для ранжирования. Устранены технические дубли главной. Старые закладки и ссылки продолжают работать через редиректы.</p>
+          </div>
+        </div>
+      </details>
+
+      <details class="flow-demo">
+        <summary>
+          <span class="alt-summary-main">
+            <span class="alt-index">3</span>
+            <span class="alt-summary-text">Индексируемые страницы фильтров и рабочая пагинация</span>
+          </span>
+          <span class="flow-summary-tag done">Выполнено</span>
+        </summary>
+        <div class="flow-demo-body">
+          <div class="flow-section accent">
+            <h4>Что это</h4>
+            <p>На страницах категорий каталога есть фильтры по цвету и форме. Раньше они переключали товары без изменения адреса — поэтому страницы «красная плитка» или «квадратная брусчатка» не существовали для поисковика как отдельные URL.</p>
+          </div>
+          <div class="flow-section">
+            <h4>Что было</h4>
+            <ul class="flow-list">
+              <li>Фильтры работали только через AJAX — адрес в браузере не менялся</li>
+              <li>Отдельных страниц под запросы «тротуарная плитка красная», «брусчатка квадратная» не существовало</li>
+              <li>Пагинация <code>/category/page/2/</code> возвращала ошибку 404 — робот не мог пройти по страницам каталога</li>
+            </ul>
+          </div>
+          <div class="flow-section done">
+            <h4>Что сделали</h4>
+            <ul class="flow-list">
+              <li>При выборе фильтра по цвету/форме адрес в браузере обновляется: <code>/vibropressovannaya-plitka/krasnyj/</code></li>
+              <li>Эти адреса открываются как полноценные страницы — с правильным canonical, H1 (согласуется по роду: «Тротуарная плитка красная», «Бордюр серый»), собственными мета-тегами и хлебными крошками</li>
+              <li>Пагинация работает и для категорий, и для фильтров: <code>/bordyurnyj-kamen/page/2/</code>, <code>/bordyurnyj-kamen/seriy/page/2/</code></li>
+            </ul>
+          </div>
+          <div class="flow-section">
+            <h4>Что это даёт</h4>
+            <p>Появились новые точки входа из поиска по узким запросам. Пользователь может скопировать ссылку на «красную плитку» и отправить. Робот может полностью обойти и проиндексировать каталог постранично.</p>
+          </div>
+        </div>
+      </details>
+
+      <details class="flow-demo">
+        <summary>
+          <span class="alt-summary-main">
+            <span class="alt-index">4</span>
+            <span class="alt-summary-text">Файлы для поисковиков: robots.txt и sitemap.xml</span>
+          </span>
+          <span class="flow-summary-tag done">Выполнено</span>
+        </summary>
+        <div class="flow-demo-body">
+          <div class="flow-section accent">
+            <h4>Что это</h4>
+            <p>robots.txt — подсказывает поисковым роботам, какие разделы не обходить (административная часть, служебные страницы). sitemap.xml — карта сайта со списком страниц, которые стоит проиндексировать.</p>
+          </div>
+          <div class="flow-section">
+            <h4>Что было</h4>
+            <ul class="flow-list">
+              <li>robots.txt отсутствовал или автоматически закрывал сайт от индексации (это критическая ошибка — сайт просто не появляется в поиске)</li>
+              <li>В sitemap было 14 карт, в которых много мусорных страниц: архивы таксономий-фильтров с некорректными URL, страница автора (<code>/author/root/</code>), тестовый пост «Привет, мир», страница корзины</li>
+            </ul>
+          </div>
+          <div class="flow-section done">
+            <h4>Что сделали</h4>
+            <ul class="flow-list">
+              <li>Создали правильный robots.txt: сайт открыт для индексации, закрыты технические разделы (админка, поиск, корзина, служебные адреса)</li>
+              <li>Sitemap сократили с 14 карт до 5 — остались только страницы сайта, товары, категории, статьи и категории статей</li>
+              <li>Удалили тестовый пост, выключили индексацию корзины, страницы автора и лишних архивов</li>
+            </ul>
+            <p>Итоговый robots.txt — в разделе «Файлы» ниже.</p>
+          </div>
+          <div class="flow-section">
+            <h4>Что это даёт</h4>
+            <p>Поисковый робот тратит внимание на полезные страницы, а не на технические. Экономится «бюджет обхода» — лимит страниц, который робот готов просмотреть за визит. Сайт гарантированно открыт для полной индексации.</p>
+          </div>
+        </div>
+      </details>
+
+      <details class="flow-demo">
+        <summary>
+          <span class="alt-summary-main">
+            <span class="alt-index">5</span>
+            <span class="alt-summary-text">UX-правки: пустые разделы, галерея, кнопка консультации</span>
+          </span>
+          <span class="flow-summary-tag done">Выполнено</span>
+        </summary>
+        <div class="flow-demo-body">
+          <div class="flow-section">
+            <h4>Что было</h4>
+            <ul class="flow-list">
+              <li>Пустые категории «Вибролитая плитка» и «Сопутствующие товары» (0 товаров) отображались и в блоке категорий на главной, и в выпадающем меню шапки. Пользователь кликал и попадал на пустую страницу</li>
+              <li>Блок «Наши объекты» на главной вёл в пустую галерею работ</li>
+              <li>Кнопка «Получить консультацию» в блоке «Поможем подобрать» была заглушкой — никуда не вела</li>
+            </ul>
+          </div>
+          <div class="flow-section done">
+            <h4>Что сделали</h4>
+            <ul class="flow-list">
+              <li>Пустые категории скрыты автоматически. Как только в категорию добавят хотя бы один товар — она появится снова без дополнительных действий</li>
+              <li>Блок «Наши объекты» показывается только при наличии объектов в галерее</li>
+              <li>Кнопка «Получить консультацию» теперь плавно прокручивает к форме заявки в футере</li>
+            </ul>
+          </div>
+          <div class="flow-section">
+            <h4>Что это даёт</h4>
+            <p>Чистый сайт без тупиковых страниц. Лучшие поведенческие сигналы — пользователь не уходит с пустых страниц, а попадает прямо к форме заявки. Поисковик тоже учитывает отказы и время на странице.</p>
+          </div>
+        </div>
+      </details>
+
+      <details class="flow-demo">
+        <summary>
+          <span class="alt-summary-main">
+            <span class="alt-index">6</span>
+            <span class="alt-summary-text">Заголовки H1 и Alt для изображений</span>
+          </span>
+          <span class="flow-summary-tag done">Выполнено</span>
+        </summary>
+        <div class="flow-demo-body">
+          <div class="flow-section accent">
+            <h4>Что это</h4>
+            <p>H1 — главный заголовок страницы, сильный сигнал поисковику о её теме. Alt — текстовое описание изображения, которое видит поисковик и пользователи с отключённой загрузкой картинок.</p>
+          </div>
+          <div class="flow-section">
+            <h4>Что было</h4>
+            <ul class="flow-list">
+              <li>На главной странице — 7 тегов H1 вместо одного. Причина: слайдер Owl Carousel клонировал слайды для эффекта бесконечной прокрутки (3 оригинала × клоны = 7 тегов)</li>
+              <li>На странице каждого товара — 2 одинаковых H1 (мобильная и десктопная версии вёрстки одновременно в коде)</li>
+              <li>У всех фотографий товаров и карточек каталога атрибут <code>alt=""</code> был пустой — в поиске по картинкам такие фото не участвуют</li>
+            </ul>
+          </div>
+          <div class="flow-section done">
+            <h4>Что сделали</h4>
+            <ul class="flow-list">
+              <li>Слайдер переведён в режим без клонирования. Первому слайду ставится H1, остальным — визуально идентичный тег без H1. Единственный H1 на главной: «Тротуарная плитка в Истре от производителя»</li>
+              <li>На странице товара лишний H1 заменён на обычный абзац — остался ровно один H1</li>
+              <li>Alt-атрибуты подставляются автоматически из названия товара. Для галереи фото: «Название — фото 2», «Название — фото 3»</li>
+            </ul>
+          </div>
+          <div class="flow-section">
+            <h4>Что это даёт</h4>
+            <p>Чёткий единственный сигнал поисковику о теме каждой страницы. Плюс новый канал трафика — поиск по картинкам в Яндекс Картинках и Google Images.</p>
+          </div>
+        </div>
+      </details>
+
+      <details class="flow-demo">
+        <summary>
+          <span class="alt-summary-main">
+            <span class="alt-index">7</span>
+            <span class="alt-summary-text">Микроразметка Schema.org — пять типов</span>
+          </span>
+          <span class="flow-summary-tag done">Выполнено</span>
+        </summary>
+        <div class="flow-demo-body">
+          <div class="flow-section accent">
+            <h4>Что это</h4>
+            <p>Schema.org — специальный код на страницах, который объясняет поисковикам: «Здесь компания с таким адресом», «Здесь товар с такой ценой», «Здесь отзыв с рейтингом», «Здесь вопрос-ответ». С этим кодом в поисковой выдаче появляются расширенные сниппеты — звёзды, цены, раскрываемые блоки. Они заметнее обычных ссылок и забирают больше кликов.</p>
+          </div>
+          <div class="flow-section">
+            <h4>Что было</h4>
+            <p>Разметки на сайте практически не было — только базовая навигация. Ни отзывы, ни товары, ни компания не были «размечены» для поисковика.</p>
+          </div>
+          <div class="flow-section done">
+            <h4>Что сделали — 5 типов разметки</h4>
+            <ul class="flow-list">
+              <li><strong>LocalBusiness</strong> — на всех страницах сайта. Адрес в Истре, телефон, координаты, зона обслуживания. Усиливает локальную выдачу («плитка Истра»)</li>
+              <li><strong>Product</strong> — в каждой карточке товара. Название, артикул, цена, статус «в наличии»</li>
+              <li><strong>BreadcrumbList</strong> — хлебные крошки для категорий и товаров. На страницах-фильтрах (например, <code>/bordyurnyj-kamen/seriy/</code>) цепочка расширена: Главная → Каталог → Бордюрный камень → серый</li>
+              <li><strong>Review + AggregateRating</strong> — на главной. 8 отзывов с рейтингом 4.9/5 — возможны звёзды в поисковой выдаче</li>
+              <li><strong>FAQPage</strong> — на главной. 6 вопросов-ответов — возможен раскрываемый блок FAQ прямо в выдаче</li>
+            </ul>
+            <p>Пример готовой разметки LocalBusiness — в разделе «Готовая микроразметка» ниже.</p>
+          </div>
+          <div class="flow-section">
+            <h4>Что это даёт</h4>
+            <p>В поисковой выдаче у сайта возможны: звёзды рейтинга, цены товаров прямо в сниппете, раскрываемые вопросы, выделение компании на Яндекс Картах. Это повышает кликабельность даже при той же позиции — пользователь скорее кликнет на сайт со звёздами, чем на соседний без них.</p>
+          </div>
+        </div>
+      </details>
+
+      <details class="flow-demo">
+        <summary>
+          <span class="alt-summary-main">
+            <span class="alt-index">8</span>
+            <span class="alt-summary-text">Полная переработка главной страницы</span>
+          </span>
+          <span class="flow-summary-tag done">Выполнено</span>
+        </summary>
+        <div class="flow-demo-body">
+          <div class="flow-section accent">
+            <h4>Зачем это нужно</h4>
+            <p>Для сайта, продвигающегося по конкурентным коммерческим запросам («тротуарная плитка купить», «плитка Истра»), на главной должно быть минимум 1 000–2 000 слов осмысленного текста. Мало текста — и поисковик не понимает, по какой теме страница более релевантна, чем конкуренты.</p>
+          </div>
+          <div class="flow-section">
+            <h4>Что было</h4>
+            <ul class="flow-list">
+              <li>Всего ~360 слов видимого текста на главной — критически мало</li>
+              <li>Описания преимуществ были короткими и общими — без конкретики</li>
+              <li>В отзывах лежали три одинаковых тестовых текста</li>
+              <li>Блок «Хиты продаж» выводил 2 товара вместо 4 (несколько проблем в коде)</li>
+              <li>Анкоры ссылок обезличенные: «Подробнее», «Все проекты», «Про сертификаты»</li>
+              <li>Слово «купить» вообще не встречалось на странице</li>
+            </ul>
+          </div>
+          <div class="flow-section done">
+            <h4>Что сделали</h4>
+            <p>Добавили 6 новых смысловых блоков:</p>
+            <ul class="flow-list">
+              <li>Интро после слайдера — позиционирование и география поставок</li>
+              <li>Подзаголовок под «Категории» — подбор плитки под задачу (толщина по нагрузке)</li>
+              <li>Большой раскрываемый блок «Производство» — о заводе, технологии вибропрессования, этапах развития, контроле качества, ассортименте (~450 слов)</li>
+              <li>Блок «Доставка» с тремя зонами городов (Истра, Красногорск, Одинцово, Звенигород, Солнечногорск, Волоколамск, Руза, Тверь, Москва)</li>
+              <li>Блок «О заводе» — факты: с 2018 года, 3 линии вибропрессования, 4 000+ клиентов</li>
+              <li>Блок FAQ — 6 развёрнутых ответов на реальные вопросы покупателей</li>
+            </ul>
+            <p>Дополнительно:</p>
+            <ul class="flow-list">
+              <li>4 преимущества переписали с конкретикой: F200, водопоглощение ≤6%, срок службы 30 лет, отклонение геометрии ±1 мм</li>
+              <li>3 одинаковых отзыва заменили на 8 разных — с именами, городами, деталями объектов</li>
+              <li>Блок «Хиты продаж» починили и перенесли выше (ближе к H1) — теперь 4 товара в ряд</li>
+              <li>Улучшили H2 и анкоры ссылок: «О нас говорят» → «Отзывы о тротуарной плитке АГАТ», «Подробнее о нас» → «О заводе АГАТ в Истре» и т.д.</li>
+            </ul>
+            <p>Все факты сверили со страницей «О нас» — без выдуманных данных.</p>
+          </div>
+          <div class="flow-section">
+            <h4>Что это даёт</h4>
+            <p>Объём видимого текста вырос с ~360 до ~2 500 слов. Страница получила полное семантическое покрытие по целевой тематике: производство, характеристики, доставка, гарантии, сервис. Это улучшает позиции по широкому ядру запросов и даёт больше точек входа из поиска. Коммерческий интент («купить») усиливается расположением товарной сетки в верхней части страницы.</p>
+          </div>
+        </div>
+      </details>
+
+      <details class="flow-demo">
+        <summary>
+          <span class="alt-summary-main">
+            <span class="alt-index">9</span>
+            <span class="alt-summary-text">Рефакторинг кода — отдельные файлы CSS и JS</span>
+          </span>
+          <span class="flow-summary-tag done">Выполнено</span>
+        </summary>
+        <div class="flow-demo-body">
+          <div class="flow-section accent">
+            <h4>Что это</h4>
+            <p>Рефакторинг — это техническая чистка кода без изменения внешнего вида сайта. Цель — сделать код легче в поддержке и быстрее в загрузке.</p>
+          </div>
+          <div class="flow-section">
+            <h4>Что было и что сделали</h4>
+            <p>Стили новых SEO-блоков (~80 строк CSS) и скрипт раскрытия текста «Производство» изначально были встроены прямо в шаблон главной. Это работало, но мешало читать код и не кэшировалось браузером.</p>
+            <p>Вынесли в отдельные файлы <code>home-seo.css</code> и <code>home-seo.js</code>, подключили через стандартный механизм WordPress только на главной (на остальных страницах они не загружаются и не замедляют их).</p>
+          </div>
+          <div class="flow-section">
+            <h4>Что это даёт</h4>
+            <p>Чистый шаблон главной, который легко поддерживать. Браузер кэширует CSS и JS — повторные заходы пользователя быстрее. На других страницах сайта эти файлы не загружаются — нет лишнего трафика.</p>
+          </div>
+        </div>
+      </details>
+
+      <details class="flow-demo">
+        <summary>
+          <span class="alt-summary-main">
+            <span class="alt-index">10</span>
+            <span class="alt-summary-text">Яндекс Бизнес и Яндекс Карты — подготовка к запуску</span>
+          </span>
+          <span class="flow-summary-tag">Ожидает клиента</span>
+        </summary>
+        <div class="flow-demo-body">
+          <div class="flow-section accent">
+            <h4>Что это</h4>
+            <p>Яндекс Бизнес — карточка компании на Яндекс Картах и в локальной выдаче. Для локального производителя это один из ключевых каналов: по запросу «плитка Истра» карточка компании с адресом и телефоном появляется в результатах поиска выше обычных сайтов.</p>
+          </div>
+          <div class="flow-section done">
+            <h4>Что уже сделано</h4>
+            <ul class="flow-list">
+              <li>Подготовлено <strong>52 качественных фотографии</strong> продукции в папке на рабочем столе (~55 МБ)</li>
+              <li>Фото разложены по категориям: реальные фото уложенной плитки, брусчатка, плитка, бордюры, ColorMix «Бавария», «Новый город»</li>
+              <li>Собраны все данные для карточки: адрес, телефоны, график, категории деятельности, описание</li>
+            </ul>
+            <p>Примеры подготовленных фото — в разделе «Фото для Яндекс Бизнеса» ниже.</p>
+          </div>
+          <div class="flow-section">
+            <h4>Что остаётся сделать клиенту</h4>
+            <ul class="flow-list">
+              <li>Зарегистрировать компанию в Яндекс Бизнесе (<a class="audit-link" href="https://business.yandex.ru/" target="_blank" rel="noreferrer">business.yandex.ru</a>) от имени владельца</li>
+              <li>Пройти подтверждение прав (звонок или письмо от Яндекса)</li>
+              <li>Заполнить карточку по нашим данным и загрузить подготовленные фото</li>
+              <li>Связать карточку с сайтом через Яндекс Вебмастер</li>
+            </ul>
+          </div>
+          <div class="flow-section">
+            <h4>Что это даст</h4>
+            <p>Появление в локальной выдаче Яндекса по запросам «плитка Истра», «брусчатка рядом» и т.д. Видимость на Яндекс Картах. Внешняя ссылка на сайт с авторитетного домена (усиливает позиции в обычной выдаче). Канал для сбора отзывов, звонков и заявок прямо из карточки.</p>
+          </div>
+        </div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<section id="meta" class="bg-white">
+  <div class="container">
+    <div class="section-header">
+      <h2>Таблица мета-тегов: «было → стало»</h2>
+      <p>Ниже — как изменились заголовки и описания страниц в поисковой выдаче. Показаны ключевые страницы — всего их 22.</p>
+    </div>
+
+    <div class="table-card">
+      <div class="table-card-head">
+        <h3>Title и Description — примеры</h3>
+        <p>Title — заголовок страницы в выдаче. Description — описание под заголовком.</p>
+      </div>
+      <div class="table-wrap">
+        <table class="market-table">
+          <thead>
+            <tr>
+              <th>Страница</th>
+              <th>Было</th>
+              <th>Стало</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="Страница"><a class="audit-link" href="https://gbi-agat.ru/" target="_blank" rel="noreferrer">Главная</a></td>
+              <td data-label="Было">
+                <strong>Title:</strong> ГБИ АГАТ<br>
+                <strong>Desc:</strong> —
+              </td>
+              <td data-label="Стало">
+                <strong>Title:</strong> Тротуарная плитка в Истре — купить у производителя | ГБИ АГАТ<br>
+                <strong>Desc:</strong> ГБИ АГАТ — производитель тротуарной плитки и бордюрного камня в Истре. Широкий ассортимент, доставка по Московской области, укладка под ключ.
+              </td>
+            </tr>
+            <tr>
+              <td data-label="Страница"><a class="audit-link" href="https://gbi-agat.ru/bordyurnyj-kamen/" target="_blank" rel="noreferrer">/bordyurnyj-kamen/</a></td>
+              <td data-label="Было">
+                <strong>Title:</strong> Архивы Бордюрный камень - ГБИ АГАТ<br>
+                <strong>Desc:</strong> —
+              </td>
+              <td data-label="Стало">
+                <strong>Title:</strong> Бордюрный камень в Истре — купить у производителя | ГБИ АГАТ<br>
+                <strong>Desc:</strong> Бордюрный камень от производителя в Истре и МО: цена, размеры, доставка. Подберём бортовой камень под объект и быстро рассчитаем заказ.
+              </td>
+            </tr>
+            <tr>
+              <td data-label="Страница"><a class="audit-link" href="https://gbi-agat.ru/vibropressovannaya-plitka/" target="_blank" rel="noreferrer">/vibropressovannaya-plitka/</a></td>
+              <td data-label="Было">
+                <strong>Title:</strong> Архивы Вибропрессованная плитка - ГБИ АГАТ<br>
+                <strong>Desc:</strong> —
+              </td>
+              <td data-label="Стало">
+                <strong>Title:</strong> Вибропрессованная плитка в Истре — купить | ГБИ АГАТ<br>
+                <strong>Desc:</strong> Вибропрессованная тротуарная плитка от производителя: цена, формы, цвета, доставка по Истре и МО. Получите расчёт и консультацию.
+              </td>
+            </tr>
+            <tr>
+              <td data-label="Страница"><a class="audit-link" href="https://gbi-agat.ru/bruschatka-trotuarnaya/" target="_blank" rel="noreferrer">/bruschatka-trotuarnaya/</a></td>
+              <td data-label="Было">
+                <strong>Title:</strong> Архивы Брусчатка тротуарная - ГБИ АГАТ<br>
+                <strong>Desc:</strong> —
+              </td>
+              <td data-label="Стало">
+                <strong>Title:</strong> Брусчатка тротуарная в Истре — купить у производителя | ГБИ АГАТ<br>
+                <strong>Desc:</strong> Брусчатка тротуарная от производителя в Истре и МО: цена, размеры, доставка. Поможем выбрать формат и быстро рассчитаем заказ.
+              </td>
+            </tr>
+            <tr>
+              <td data-label="Страница"><a class="audit-link" href="https://gbi-agat.ru/o-nas/" target="_blank" rel="noreferrer">/o-nas/</a></td>
+              <td data-label="Было">
+                <strong>Title:</strong> О нас - ГБИ АГАТ<br>
+                <strong>Desc:</strong> —
+              </td>
+              <td data-label="Стало">
+                <strong>Title:</strong> О компании ГБИ АГАТ — производитель тротуарной плитки в Истре<br>
+                <strong>Desc:</strong> ГБИ АГАТ — производитель бетонных изделий в Истре. Собственное производство, многолетний опыт, прямые поставки по Московской области.
+              </td>
+            </tr>
+            <tr>
+              <td data-label="Страница"><a class="audit-link" href="https://gbi-agat.ru/dostavka/" target="_blank" rel="noreferrer">/dostavka/</a></td>
+              <td data-label="Было">
+                <strong>Title:</strong> Доставка - ГБИ АГАТ<br>
+                <strong>Desc:</strong> —
+              </td>
+              <td data-label="Стало">
+                <strong>Title:</strong> Доставка тротуарной плитки по Истре и Московской области | ГБИ АГАТ<br>
+                <strong>Desc:</strong> Доставка тротуарной плитки и бордюрного камня по Истре, Москве и Московской области от производителя. Уточните стоимость и сроки.
+              </td>
+            </tr>
+            <tr>
+              <td data-label="Страница"><a class="audit-link" href="https://gbi-agat.ru/kontakty/" target="_blank" rel="noreferrer">/kontakty/</a></td>
+              <td data-label="Было">
+                <strong>Title:</strong> Контакты - ГБИ АГАТ<br>
+                <strong>Desc:</strong> —
+              </td>
+              <td data-label="Стало">
+                <strong>Title:</strong> Контакты ГБИ АГАТ — тротуарная плитка в Истре<br>
+                <strong>Desc:</strong> Адрес завода, телефон и email ГБИ АГАТ в Истре. Свяжитесь с нами для заказа тротуарной плитки и бордюрного камня или получения консультации.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="files">
+  <div class="container">
+    <div class="section-header">
+      <h2>Файлы для поисковиков</h2>
+      <p>robots.txt и пример микроразметки — уже внедрены на сайт. Приводим здесь для справки и последующих обновлений.</p>
+    </div>
+    <div class="files-grid">
+
+      <div class="code-card">
+        <h3>robots.txt — актуальная версия</h3>
+        <p>Сайт открыт для индексации. Закрыты: административная часть, поиск, корзина, служебные URL, таксономии-фильтры (они уже представлены другими оптимизированными адресами).</p>
+        <pre><code>User-agent: *
+Allow: /
+
+Disallow: /wp-admin/
+Allow: /wp-admin/admin-ajax.php
+
+Disallow: /wp-login.php
+Disallow: /xmlrpc.php
+Disallow: /?s=
+Disallow: /search/
+
+Disallow: /author/
+Disallow: /korzina/
+Disallow: /catalog-color/
+Disallow: /catalog-form/
+Disallow: /catalog-tags/
+Disallow: /catalog-price/
+Disallow: /catalog-height/
+Disallow: /catalog-purpose/
+Disallow: /wp-json/
+
+Sitemap: https://gbi-agat.ru/sitemap_index.xml</code></pre>
+      </div>
+
+      <div class="code-card">
+        <h3>Разметка LocalBusiness — пример</h3>
+        <p>Фрагмент кода, который выводится на всех страницах сайта. Сообщает поисковику, что это локальный бизнес с конкретным адресом и зоной обслуживания — усиливает позиции в локальной выдаче.</p>
+        <pre><code>{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "ГБИ АГАТ",
+  "url": "https://gbi-agat.ru/",
+  "telephone": "+7 (498) 602-02-98",
+  "priceRange": "₽₽",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Московская область, Истринский район",
+    "addressLocality": "Истра",
+    "addressRegion": "Московская область",
+    "addressCountry": "RU"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "55.9155",
+    "longitude": "36.8637"
+  },
+  "areaServed": ["Истра", "Москва", "Московская область"],
+  "description": "Производитель тротуарной плитки и бордюрного камня в Истре."
+}</code></pre>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="photos" class="bg-white">
+  <div class="container">
+    <div class="section-header">
+      <h2>Фото для Яндекс Бизнеса</h2>
+      <p>Для регистрации в Яндекс Бизнесе отобрали 52 качественных фотографии продукции. Ниже — часть набора. Полный архив передан в отдельной папке на рабочем столе.</p>
+    </div>
+
+    <div class="photo-grid">
+      <figure>
+        <img src="gbi-agat-фото-для-yandex-бизнеса/1-реальные-фото/trotuarnaya-plitka-parket.jpg" alt="Тротуарная плитка Паркет">
+        <figcaption>Плитка «Паркет»</figcaption>
+      </figure>
+      <figure>
+        <img src="gbi-agat-фото-для-yandex-бизнеса/1-реальные-фото/trotuarnaya-plitka-bavariya-komplektnaya.jpg" alt="Плитка Бавария комплектная">
+        <figcaption>Плитка «Бавария»</figcaption>
+      </figure>
+      <figure>
+        <img src="gbi-agat-фото-для-yandex-бизнеса/1-реальные-фото/trotuarnaya-plitka-novyj-gorod-komplektenaya.jpg" alt="Плитка Новый город">
+        <figcaption>Плитка «Новый город»</figcaption>
+      </figure>
+      <figure>
+        <img src="gbi-agat-фото-для-yandex-бизнеса/1-реальные-фото/trotuarnaya-plitka-kvadrat.jpg" alt="Квадратная тротуарная плитка">
+        <figcaption>Квадратная плитка</figcaption>
+      </figure>
+      <figure>
+        <img src="gbi-agat-фото-для-yandex-бизнеса/1-реальные-фото/bruschatka-1.jpg" alt="Брусчатка">
+        <figcaption>Брусчатка</figcaption>
+      </figure>
+      <figure>
+        <img src="gbi-agat-фото-для-yandex-бизнеса/1-реальные-фото/bordyurnyj-kamen-dorozhnyj.jpg" alt="Бордюрный камень дорожный">
+        <figcaption>Бордюр дорожный</figcaption>
+      </figure>
+      <figure>
+        <img src="gbi-agat-фото-для-yandex-бизнеса/1-реальные-фото/bordyurnyj-kamen-sadovyj.jpg" alt="Бордюрный камень садовый">
+        <figcaption>Бордюр садовый</figcaption>
+      </figure>
+      <figure>
+        <img src="gbi-agat-фото-для-yandex-бизнеса/1-реальные-фото/trotuarnaya-plitka-gazonnaya-reshetka.jpg" alt="Газонная решётка">
+        <figcaption>Газонная решётка</figcaption>
+      </figure>
+    </div>
+
+    <div class="photo-note">
+      <p><strong>Как распределены фото в папке:</strong></p>
+      <p>• 23 реальных фото уложенной плитки и бордюров (самые подходящие для обложки и первых фото в карточке)<br>
+      • 8 фото брусчатки разных толщин (60, 80, 100 мм)<br>
+      • 8 фото тротуарной плитки разных форматов<br>
+      • 4 фото бордюрных камней всех размеров<br>
+      • 5 фото линейки «Новый город» в четырёх цветах<br>
+      • 4 фото линейки «Бавария» (ColorMix)</p>
+    </div>
+  </div>
+</section>
+
+<section id="results">
+  <div class="container">
+    <div class="section-header">
+      <h2>Итоги в цифрах</h2>
+    </div>
+    <div class="summary-grid">
+      <div class="summary-card">
+        <div class="num">~2 500</div>
+        <div class="lbl">слов контента на главной (было ~360)</div>
+      </div>
+      <div class="summary-card">
+        <div class="num">22</div>
+        <div class="lbl">страницы с новыми мета-тегами</div>
+      </div>
+      <div class="summary-card">
+        <div class="num">5</div>
+        <div class="lbl">типов микроразметки Schema.org</div>
+      </div>
+      <div class="summary-card">
+        <div class="num">14 → 5</div>
+        <div class="lbl">карт в sitemap (убран мусор)</div>
+      </div>
+      <div class="summary-card">
+        <div class="num">1</div>
+        <div class="lbl">H1 на главной (было 7)</div>
+      </div>
+      <div class="summary-card">
+        <div class="num">52</div>
+        <div class="lbl">фото готово для Яндекс Бизнеса</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer>SEO-работы по сайту ГБИ АГАТ · <a href="https://gbi-agat.ru/" style="color:inherit">gbi-agat.ru</a></footer>
+</body>
+</html>

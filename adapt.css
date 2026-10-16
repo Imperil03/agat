@@ -20,6 +20,12 @@
 .archive-chart-note{font-size:var(--meta-size);color:var(--muted);margin-top:10px}
 .table-scroll[data-engine=yandex] .archive-positions{--visible-rank-columns:var(--yandex-columns)}
 .table-scroll[data-engine=google] .archive-positions{--visible-rank-columns:var(--google-columns)}
+/* Keep all work-card sections full width at the responsive breakpoint. */
+@media(max-width:1100px){
+  .works-table tr{grid-template-columns:minmax(0,1fr)}
+  .works-table td{grid-column:1/-1}
+  .works-table td:first-child,.works-table td[data-label]{width:100%;max-width:none}
+}
 .works-table.without-details th:first-child{width:27%}
 .works-table.without-details th:nth-child(2){width:38%}
 .works-table.without-details th:last-child{width:35%}

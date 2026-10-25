@@ -14,7 +14,8 @@
 }
 .archive-positions .rank-col{width:calc(68% / var(--rank-columns))}
 .archive-positions .archive-date{white-space:nowrap}
-.results-heading p{font-size:15px;line-height:1.8}
+.results-heading p{font-size:15px;line-height:1.8;max-width:80%}
+@media(max-width:800px){.results-heading p{max-width:none}}
 .results-heading .report-state{font-size:var(--meta-size);color:var(--muted);margin-top:16px}
 .results-heading .archive-conclusion-title{font-weight:600}
 .engine-kpi-metric .archive-change{font-size:var(--meta-size)}

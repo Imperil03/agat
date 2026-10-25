@@ -96,7 +96,6 @@
       check(report.projectId === data.project.id && /^\d{4}-(0[1-9]|1[0-2])$/.test(label), 'Неверный идентификатор месяца.');
       check(['in_progress','closed'].includes(report.status), `${label}: неизвестное состояние отчёта.`);
       for (const key of ['intro','conclusions']) check(Array.isArray(report[key]) && report[key].every(x => typeof x === 'string'), `${label}: неверный текст ${key}.`);
-      if (own(report,'worksIntro')) check(Array.isArray(report.worksIntro) && report.worksIntro.every(x => typeof x === 'string'), `${label}: неверное вступление к работам.`);
       check(!(report.archive && report.rankings), `${label}: архив смешан с API.`);
       if (report.archive) {
         const a = report.archive;

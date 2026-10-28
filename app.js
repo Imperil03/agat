@@ -41,20 +41,38 @@
     const text = kind === 'works' ? 'Будем добавлять выполненные работы по мере готовности. Итоги месяца появятся после его завершения.' : 'Здесь появятся сохранённые замеры Яндекса и Google с фактическими датами проверки.';
     return `<div class="empty-state surface"><div class="empty-symbol">${icon(kind === 'works' ? 'work' : 'chart')}</div><div><h2>${heading}</h2><p>${text}</p></div></div>`;
   }
-  function kpiHTML(engine, top) {
+  function kpiHTML(engine, top, comparison = view) {
     if (report.archive) {
       const metric = report.archive.kpis[engine]['top' + top];
       const before = metric.before.replace(/^Было:\s*/i,'').trim(), after = metric.after.replace(/^Стало:\s*/i,'').trim();
       return `<div class="engine-kpi-metric"><h4>Топ-${top}</h4><div class="kpi-values"><div><span class="kpi-period">Было</span><span class="number before">${esc(before)}</span></div>${icon('arrow','kpi-arrow')}<div><span class="kpi-period">Стало</span><span class="number neutral">${esc(after)}</span></div></div><p class="kpi-count archive-change">${esc(metric.change)}</p></div>`;
     }
-    const stats = view?.stats[engine], metric = stats?.['top' + top];
+    const stats = comparison?.stats[engine], metric = stats?.['top' + top];
     if (!stats?.total) return `<div class="engine-kpi-metric"><h4>Топ-${top}</h4><p class="no-metric">Нет данных</p></div>`;
     const after = metric.after / stats.total * 100, before = metric.before === null ? null : metric.before / stats.total * 100;
     const trend = before === null || after === before ? 'neutral' : after > before ? 'positive' : 'negative';
     return `<div class="engine-kpi-metric"><h4>Топ-${top}</h4><div class="kpi-values">${before === null ? '' : `<div><span class="kpi-period">Было</span><span class="number before">${number(metric.before)}</span></div>${icon('arrow','kpi-arrow')}`}<div>${before === null ? '' : '<span class="kpi-period">Стало</span>'}<span class="number ${trend}">${number(metric.after)}</span></div></div><p class="kpi-count">из ${number(stats.total)} запросов · ${number(after)}%</p></div>`;
   }
-  function engineKpisHTML() {
-    return `<div class="engine-kpi-grid">${M.ENGINES.map(engine => `<section class="engine-kpi-card surface engine-${engine}" aria-labelledby="kpi-heading-${engine}"><h3 class="searcher-name" id="kpi-heading-${engine}">${engine === 'yandex' ? 'Яндекс' : 'Google'}</h3><div class="engine-kpi-metrics">${[10,3].map(top => kpiHTML(engine,top)).join('')}</div></section>`).join('')}</div>`;
+  function engineKpisHTML(comparison = view, idPrefix = 'kpi') {
+    return `<div class="engine-kpi-grid">${M.ENGINES.map(engine => `<section class="engine-kpi-card surface engine-${engine}" aria-labelledby="${idPrefix}-heading-${engine}"><h3 class="searcher-name" id="${idPrefix}-heading-${engine}">${engine === 'yandex' ? 'Яндекс' : 'Google'}</h3><div class="engine-kpi-metrics">${[10,3].map(top => kpiHTML(engine,top,comparison)).join('')}</div></section>`).join('')}</div>`;
+  }
+  function cumulativeResultsHTML() {
+    const rankings = report.rankings;
+    if (!rankings?.start || rankings.start.date === rankings.after.date) return '';
+    const cumulative = M.rankingsView({before:rankings.start,after:rankings.after});
+    if (!M.ENGINES.every(engine => cumulative.stats[engine].comparable)) return '';
+    const counts = M.ENGINES.map(engine => cumulative.stats[engine].total);
+    const cohort = counts[0] === counts[1] ? `${number(counts[0])} запросов с замерами в обе даты` : 'запросы с замерами в обе даты для каждого поисковика';
+    return `<section class="results-cumulative" aria-labelledby="cumulative-results-title"><header class="results-period-heading"><h2 id="cumulative-results-title">Результат с первого замера</h2><p class="results-period-dates">${dateLabel(rankings.start.date)} — ${dateLabel(rankings.after.date)}</p><p class="results-period-note">Сравниваем один и тот же набор: ${cohort}. Запросы без стартового замера остаются в общей таблице ниже, но не входят в это сравнение.</p></header>${engineKpisHTML(cumulative,'cumulative-kpi')}</section>`;
+  }
+  function growthHighlightsHTML() {
+    if (!view?.before || !report.rankingHighlights?.length || !view.stats.yandex.comparable) return '';
+    const rows = report.rankingHighlights.map(id => view.rows.find(row => row.id === id)).filter(row => row && ['up','appeared'].includes(row.yandex.change.kind));
+    if (!rows.length) return '';
+    const improved = view.rows.filter(row => row.yandex.change.kind === 'up').length;
+    const appeared = view.rows.filter(row => row.yandex.change.kind === 'appeared').length;
+    const summary = `${number(improved)} запросов улучшили позиции, ещё ${number(appeared)} появились в выдаче.`;
+    return `<section class="rank-growth-card surface" aria-labelledby="rank-growth-title"><header><h2 id="rank-growth-title">Примеры роста в Яндексе</h2><p class="results-period-dates">${dateLabel(view.before.date)} — ${dateLabel(view.after.date)} · выбранные примеры</p><p class="rank-growth-summary">${summary}</p></header><table class="rank-growth-table"><caption class="sr-only">Выбранные запросы с положительной динамикой в Яндексе за месяц</caption><thead><tr><th scope="col">Запрос</th><th scope="col">Было<br><time datetime="${view.before.date}">${dateLabel(view.before.date).slice(0,5)}</time></th><th scope="col">Стало<br><time datetime="${view.after.date}">${dateLabel(view.after.date).slice(0,5)}</time></th></tr></thead><tbody>${rows.map(row => `<tr><th scope="row">${esc(row.query)}</th><td>${rankCell(row.yandex.before)}</td><td class="rank-growth-current">${rankCell(row.yandex.after)}</td></tr>`).join('')}</tbody></table></section>`;
   }
   function rankCharts() {
     const archive = report.archive;
@@ -135,9 +153,11 @@
     view = M.rankingsView(report.rankings);
     let intro = report.intro.map(paragraphsHTML).join('');
     if (report.conclusions.length) intro += '<p class="archive-conclusion-title">Выводы</p>' + report.conclusions.map(paragraphsHTML).join('');
-    const stateNote = !report.archive && view ? `${report.status === 'in_progress' ? 'Промежуточные данные. Итоговый отчёт будет подготовлен в конце месяца. ' : ''}Замеры Топвизора: ${view.before ? dateLabel(view.before.date) + ' — ' : ''}${dateLabel(view.after.date)}. ${esc(view.after.region)}, смартфоны.` : '';
+    const stateNote = !report.archive && view ? `${report.status === 'in_progress' ? 'Промежуточные данные. Итоговый отчёт будет подготовлен в конце месяца. ' : ''}Последний замер Топвизора: ${dateLabel(view.after.date)}. ${esc(view.after.region)}, смартфоны.` : '';
     const note = view?.before && !view.metaMatch ? '<p class="metrics-note">Настройки замеров различаются. Динамику не сравниваем.</p>' : '';
-    return `<div class="results-heading"><h2>Результаты за ${M.monthLabel(state.month).toLowerCase()}</h2>${intro}${stateNote ? `<p class="report-state">${stateNote}</p>` : ''}</div>${report.archive || view ? engineKpisHTML() + note + rankCharts() + trafficHTML() + searchClicksHTML() + queryTableHTML() : trafficHTML() + searchClicksHTML() + pendingHTML('results')}`;
+    const monthlyHeading = view ? `<header class="results-period-heading"><h2 id="monthly-results-title">Динамика за месяц</h2><p class="results-period-dates">${view.before ? dateLabel(view.before.date) + ' — ' : ''}${dateLabel(view.after.date)}</p></header>` : '';
+    const monthly = report.archive || view ? `<section class="results-monthly"${view ? ' aria-labelledby="monthly-results-title"' : ''}>${monthlyHeading}${engineKpisHTML()}${note}${rankCharts()}</section>` : '';
+    return `<div class="results-heading"><h2>Результаты за ${M.monthLabel(state.month).toLowerCase()}</h2>${intro}${stateNote ? `<p class="report-state">${stateNote}</p>` : ''}</div>${cumulativeResultsHTML()}${growthHighlightsHTML()}${monthly}${trafficHTML()}${searchClicksHTML()}${report.archive || view ? queryTableHTML() : pendingHTML('results')}`;
   }
   function worksHTML() {
     if (!report.works.length) return pendingHTML('works');

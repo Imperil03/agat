@@ -109,6 +109,11 @@
       check(report.projectId === data.project.id && /^\d{4}-(0[1-9]|1[0-2])$/.test(label), 'Неверный идентификатор месяца.');
       check(['in_progress','closed'].includes(report.status), `${label}: неизвестное состояние отчёта.`);
       for (const key of ['intro','conclusions']) check(Array.isArray(report[key]) && report[key].every(x => typeof x === 'string'), `${label}: неверный текст ${key}.`);
+      if (own(report,'rankingHighlights')) {
+        const highlights = report.rankingHighlights;
+        const ids = new Set((report.rankings?.after?.rows || []).map(row => row.id));
+        check(Array.isArray(highlights) && new Set(highlights).size === highlights.length && highlights.every(id => typeof id === 'string' && ids.has(id)), `${label}: неверные запросы примеров роста.`);
+      }
       check(!(report.archive && report.rankings), `${label}: архив смешан с API.`);
       if (report.archive) {
         const a = report.archive;

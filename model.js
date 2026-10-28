@@ -35,7 +35,9 @@
   }
   function sameSettings(before, after, engine) {
     if (!before || !after || before.region !== after.region || before.device !== after.device || before.sourceKey !== after.sourceKey) return false;
-    return JSON.stringify(before.engines?.[engine] ?? null) === JSON.stringify(after.engines?.[engine] ?? null);
+    const previous = before.engines?.[engine], current = after.engines?.[engine];
+    if (!previous || !current) return previous == null && current == null;
+    return ['searcher','region','device','language'].every(key => previous[key] === current[key]);
   }
   function rankingsView(rankings) {
     if (!rankings?.after) return null;
@@ -85,6 +87,17 @@
       return true;
     });
   }
+  function sortRankRows(rows, engine = 'yandex') {
+    const key = ENGINES.includes(engine) ? engine : 'yandex';
+    const position = row => {
+      const value = Array.isArray(row[key]) ? row[key].at(-1) : row[key]?.after;
+      return (typeof value === 'number' || (typeof value === 'string' && /^[1-9]\d*$/.test(value))) && Number.isFinite(Number(value)) && Number(value) > 0 ? Number(value) : Infinity;
+    };
+    return [...rows].sort((a,b) => {
+      const first = position(a), second = position(b);
+      return first !== second ? (first < second ? -1 : 1) : normalize(a.query).localeCompare(normalize(b.query),'ru') || String(a.id).localeCompare(String(b.id));
+    });
+  }
   function validateData(data) {
     const errors = [], check = (test, message) => { if (!test) errors.push(message); };
     if (!data?.project || !Array.isArray(data.reports)) return ['Нет настроек проекта или месяцев.'];
@@ -126,6 +139,22 @@
         if (report.rankings.start) check(report.rankings.start.date <= (report.rankings.before?.date || report.rankings.after.date), `${label}: первый замер позже отчётного периода.`);
       }
       if (report.traffic) check(Number.isInteger(report.traffic.visits) && report.traffic.visits >= 0, `${label}: неверное число визитов.`);
+      if (report.searchClicks) {
+        const clicks = report.searchClicks;
+        check(clicks.sourceLabel === 'Google Search Console' && clicks.property === data.project.website && clicks.searchType === 'web' && clicks.granularity === 'week', `${label}: неверный источник графика кликов.`);
+        check(validDate(clicks.dateFrom) && validDate(clicks.dateTo) && clicks.dateFrom <= clicks.dateTo && validDate(clicks.exportedAt) && clicks.dateTo <= clicks.exportedAt, `${label}: неверный период графика кликов.`);
+        const series = clicks.series;
+        check(Array.isArray(series) && series.length > 0, `${label}: нет точек графика кликов.`);
+        if (Array.isArray(series) && series.length) {
+          for (let index = 0; index < series.length; index++) {
+            const row = series[index], days = (Date.parse(row?.dateTo) - Date.parse(row?.dateFrom)) / 86400000;
+            check(validDate(row?.dateFrom) && validDate(row?.dateTo) && days === 6 && Number.isInteger(row?.clicks) && row.clicks >= 0, `${label}: неверная неделя графика кликов.`);
+            if (index) check(Date.parse(row?.dateFrom) - Date.parse(series[index - 1]?.dateTo) === 86400000, `${label}: пропуск или повтор недель графика кликов.`);
+          }
+          check(series[0]?.dateFrom === clicks.dateFrom && series.at(-1)?.dateTo === clicks.dateTo, `${label}: период графика не совпадает с точками.`);
+          check(Number.isInteger(clicks.totalClicks) && clicks.totalClicks === series.reduce((total,row) => total + (row?.clicks ?? NaN),0), `${label}: неверная сумма кликов.`);
+        }
+      }
       check(Array.isArray(report.works), `${label}: отсутствует список работ.`);
       check(new Set((report.works || []).map(w => w.id)).size === report.works?.length, `${label}: повторные работы.`);
       for (const work of report.works || []) {
@@ -158,5 +187,5 @@
     }
     return errors;
   }
-  return {ENGINES, months, monthLabel, getReport, defaultMonth, safeHref, safeImageHref, validDate, normalize, rankChange, rankingsView, filterRows, validateData};
+  return {ENGINES, months, monthLabel, getReport, defaultMonth, safeHref, safeImageHref, validDate, normalize, rankChange, rankingsView, filterRows, sortRankRows, validateData};
 });

@@ -102,6 +102,7 @@
     const errors = [], check = (test, message) => { if (!test) errors.push(message); };
     if (!data?.project || !Array.isArray(data.reports)) return ['Нет настроек проекта или месяцев.'];
     check(data.project.id === 'agat' && data.project.website === 'https://gbi-agat.ru/', 'Неверный проект отчёта.');
+    if (own(data.project,'directReportUrl')) check(!!safeHref(data.project.directReportUrl), 'Неверная ссылка на отчёт Директа.');
     check(months(data).includes(data.project.currentMonth), 'Текущий месяц отсутствует.');
     check(new Set(months(data)).size === data.reports.length, 'Повторный месяц.');
     for (const report of data.reports) {
@@ -114,6 +115,7 @@
         const ids = new Set((report.rankings?.after?.rows || []).map(row => row.id));
         check(Array.isArray(highlights) && new Set(highlights).size === highlights.length && highlights.every(id => typeof id === 'string' && ids.has(id)), `${label}: неверные запросы примеров роста.`);
       }
+      if (own(report,'rankingHighlightsEngine')) check(ENGINES.includes(report.rankingHighlightsEngine), `${label}: неверный поисковик примеров роста.`);
       check(!(report.archive && report.rankings), `${label}: архив смешан с API.`);
       if (report.archive) {
         const a = report.archive;

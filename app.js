@@ -51,7 +51,10 @@
     if (!stats?.total) return `<div class="engine-kpi-metric"><h4>Топ-${top}</h4><p class="no-metric">Нет данных</p></div>`;
     const after = metric.after / stats.total * 100, before = metric.before === null ? null : metric.before / stats.total * 100;
     const trend = before === null || after === before ? 'neutral' : after > before ? 'positive' : 'negative';
-    return `<div class="engine-kpi-metric"><h4>Топ-${top}</h4><div class="kpi-values">${before === null ? '' : `<div><span class="kpi-period">Было</span><span class="number before">${number(metric.before)}</span></div>${icon('arrow','kpi-arrow')}`}<div>${before === null ? '' : '<span class="kpi-period">Стало</span>'}<span class="number ${trend}">${number(metric.after)}</span></div></div><p class="kpi-count">из ${number(stats.total)} запросов · ${number(after)}%</p></div>`;
+    const initial = comparison.before?.date === report.rankings?.start?.date;
+    const beforeLabel = initial ? 'Старт' : comparison.before ? M.monthLabel(comparison.before.date.slice(0,7),false) : 'Было';
+    const afterLabel = initial ? 'Сейчас' : M.monthLabel(comparison.after.date.slice(0,7),false);
+    return `<div class="engine-kpi-metric"><h4>Топ-${top}</h4><div class="kpi-values">${before === null ? '' : `<div><span class="kpi-period">${esc(beforeLabel)}</span><span class="number before">${number(metric.before)}</span></div>${icon('arrow','kpi-arrow')}`}<div>${before === null ? '' : `<span class="kpi-period">${esc(afterLabel)}</span>`}<span class="number ${trend}">${number(metric.after)}</span></div></div><p class="kpi-count">из ${number(stats.total)} запросов · ${number(after)}%</p></div>`;
   }
   function engineKpisHTML(comparison = view, idPrefix = 'kpi') {
     return `<div class="engine-kpi-grid">${M.ENGINES.map(engine => `<section class="engine-kpi-card surface engine-${engine}" aria-labelledby="${idPrefix}-heading-${engine}"><h3 class="searcher-name" id="${idPrefix}-heading-${engine}">${engine === 'yandex' ? 'Яндекс' : 'Google'}</h3><div class="engine-kpi-metrics">${[10,3].map(top => kpiHTML(engine,top,comparison)).join('')}</div></section>`).join('')}</div>`;
@@ -61,18 +64,17 @@
     if (!rankings?.start || rankings.start.date === rankings.after.date) return '';
     const cumulative = M.rankingsView({before:rankings.start,after:rankings.after});
     if (!M.ENGINES.every(engine => cumulative.stats[engine].comparable)) return '';
-    const counts = M.ENGINES.map(engine => cumulative.stats[engine].total);
-    const cohort = counts[0] === counts[1] ? `${number(counts[0])} запросов с замерами в обе даты` : 'запросы с замерами в обе даты для каждого поисковика';
-    return `<section class="results-cumulative" aria-labelledby="cumulative-results-title"><header class="results-period-heading"><h2 id="cumulative-results-title">Результат с первого замера</h2><p class="results-period-dates">${dateLabel(rankings.start.date)} — ${dateLabel(rankings.after.date)}</p><p class="results-period-note">Сравниваем один и тот же набор: ${cohort}. Запросы без стартового замера остаются в общей таблице ниже, но не входят в это сравнение.</p></header>${engineKpisHTML(cumulative,'cumulative-kpi')}</section>`;
+    return `<section class="results-cumulative" aria-labelledby="cumulative-results-title"><header class="results-period-heading"><h2 id="cumulative-results-title">Результат с первого замера</h2></header>${engineKpisHTML(cumulative,'cumulative-kpi')}</section>`;
   }
   function growthHighlightsHTML() {
-    if (!view?.before || !report.rankingHighlights?.length || !view.stats.yandex.comparable) return '';
-    const rows = report.rankingHighlights.map(id => view.rows.find(row => row.id === id)).filter(row => row && ['up','appeared'].includes(row.yandex.change.kind));
+    const engine = report.rankingHighlightsEngine || 'yandex', name = engine === 'google' ? 'Google' : 'Яндексе';
+    if (!view?.before || !report.rankingHighlights?.length || !view.stats[engine].comparable) return '';
+    const rows = report.rankingHighlights.map(id => view.rows.find(row => row.id === id)).filter(row => row && ['up','appeared'].includes(row[engine].change.kind));
     if (!rows.length) return '';
-    const improved = view.rows.filter(row => row.yandex.change.kind === 'up').length;
-    const appeared = view.rows.filter(row => row.yandex.change.kind === 'appeared').length;
+    const improved = view.rows.filter(row => row[engine].change.kind === 'up').length;
+    const appeared = view.rows.filter(row => row[engine].change.kind === 'appeared').length;
     const summary = `${number(improved)} запросов улучшили позиции, ещё ${number(appeared)} появились в выдаче.`;
-    return `<section class="rank-growth-card surface" aria-labelledby="rank-growth-title"><header><h2 id="rank-growth-title">Примеры роста в Яндексе</h2><p class="results-period-dates">${dateLabel(view.before.date)} — ${dateLabel(view.after.date)} · выбранные примеры</p><p class="rank-growth-summary">${summary}</p></header><table class="rank-growth-table"><caption class="sr-only">Выбранные запросы с положительной динамикой в Яндексе за месяц</caption><thead><tr><th scope="col">Запрос</th><th scope="col">Было<br><time datetime="${view.before.date}">${dateLabel(view.before.date).slice(0,5)}</time></th><th scope="col">Стало<br><time datetime="${view.after.date}">${dateLabel(view.after.date).slice(0,5)}</time></th></tr></thead><tbody>${rows.map(row => `<tr><th scope="row">${esc(row.query)}</th><td>${rankCell(row.yandex.before)}</td><td class="rank-growth-current">${rankCell(row.yandex.after)}</td></tr>`).join('')}</tbody></table></section>`;
+    return `<section class="rank-growth-card surface" aria-labelledby="rank-growth-title"><header><h2 id="rank-growth-title">Примеры роста в ${name}</h2><p class="rank-growth-summary">${summary}</p></header><table class="rank-growth-table"><caption class="sr-only">Примеры роста в ${name} за месяц</caption><thead><tr><th scope="col">Запрос</th><th scope="col">Было<br><time datetime="${view.before.date}">${dateLabel(view.before.date).slice(0,5)}</time></th><th scope="col">Стало<br><time datetime="${view.after.date}">${dateLabel(view.after.date).slice(0,5)}</time></th></tr></thead><tbody>${rows.map(row => `<tr><th scope="row">${esc(row.query)}</th><td>${rankCell(row[engine].before)}</td><td class="rank-growth-current">${rankCell(row[engine].after)}</td></tr>`).join('')}</tbody></table></section>`;
   }
   function rankCharts() {
     const archive = report.archive;
@@ -153,11 +155,10 @@
     view = M.rankingsView(report.rankings);
     let intro = report.intro.map(paragraphsHTML).join('');
     if (report.conclusions.length) intro += '<p class="archive-conclusion-title">Выводы</p>' + report.conclusions.map(paragraphsHTML).join('');
-    const stateNote = !report.archive && view ? `${report.status === 'in_progress' ? 'Промежуточные данные. Итоговый отчёт будет подготовлен в конце месяца. ' : ''}Последний замер Топвизора: ${dateLabel(view.after.date)}. ${esc(view.after.region)}, смартфоны.` : '';
     const note = view?.before && !view.metaMatch ? '<p class="metrics-note">Настройки замеров различаются. Динамику не сравниваем.</p>' : '';
-    const monthlyHeading = view ? `<header class="results-period-heading"><h2 id="monthly-results-title">Динамика за месяц</h2><p class="results-period-dates">${view.before ? dateLabel(view.before.date) + ' — ' : ''}${dateLabel(view.after.date)}</p></header>` : '';
+    const monthlyHeading = view ? `<header class="results-period-heading"><h2 id="monthly-results-title">Динамика за месяц</h2></header>` : '';
     const monthly = report.archive || view ? `<section class="results-monthly"${view ? ' aria-labelledby="monthly-results-title"' : ''}>${monthlyHeading}${engineKpisHTML()}${note}${rankCharts()}</section>` : '';
-    return `<div class="results-heading"><h2>Результаты за ${M.monthLabel(state.month).toLowerCase()}</h2>${intro}${stateNote ? `<p class="report-state">${stateNote}</p>` : ''}</div>${cumulativeResultsHTML()}${growthHighlightsHTML()}${monthly}${trafficHTML()}${searchClicksHTML()}${report.archive || view ? queryTableHTML() : pendingHTML('results')}`;
+    return `<div class="results-heading"><h2>Результаты за ${M.monthLabel(state.month).toLowerCase()}</h2>${intro}</div>${cumulativeResultsHTML()}${growthHighlightsHTML()}${monthly}${trafficHTML()}${searchClicksHTML()}${report.archive || view ? queryTableHTML() : pendingHTML('results')}`;
   }
   function worksHTML() {
     if (!report.works.length) return pendingHTML('works');
@@ -206,6 +207,8 @@
     renderQueries(); renderDetail();
   }
   $('report-client').textContent = `«${data.project.name}»`;
+  const directLink = $('direct-report-link');
+  if (directLink && M.safeHref(data.project.directReportUrl)) { directLink.href = M.safeHref(data.project.directReportUrl); directLink.hidden = false; }
   $('site-link').href = M.safeHref(data.project.website); $('site-link').innerHTML = esc(new URL(data.project.website).hostname) + icon('external');
   $('period-label').textContent = months.length === 1 ? M.monthLabel(months[0]) : `${M.monthLabel(months[0])} — ${M.monthLabel(months.at(-1)).toLowerCase()}`;
   $('report-month').innerHTML = months.map(month => `<option value="${month}">${M.monthLabel(month)}</option>`).join('');
